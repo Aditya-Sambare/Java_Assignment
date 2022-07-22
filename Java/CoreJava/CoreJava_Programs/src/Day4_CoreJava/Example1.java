@@ -38,3 +38,13 @@ public class Example1 {
     }
 
 }
+//=========================================
+//output is
+//        this is Division
+//        100
+//        120
+//        140
+//        150
+//        200
+//
+//        Process finished with exit code 0

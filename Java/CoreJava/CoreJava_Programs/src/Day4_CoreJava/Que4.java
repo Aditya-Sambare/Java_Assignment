@@ -15,3 +15,9 @@ public class Que4 {
         }
     }
 }
+//================================
+//output is
+//        X = 6
+//
+//        Process finished with exit code 0
+

@@ -19,3 +19,15 @@ public class Que7_2 {
         Skip_Todays_Day.display();
     }
 }
+//==============================
+//        output is
+//        Enter todays day
+//        saturday
+//        Monday
+//        Tuesday
+//        Wednesday
+//        Thursday
+//        Friday
+//        Sunday
+//
+//        Process finished with exit code 0

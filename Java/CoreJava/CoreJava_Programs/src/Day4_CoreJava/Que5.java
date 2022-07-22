@@ -14,6 +14,16 @@ class Compare_Numbers{
 }
 public class Que5 {
     public static void main(String[] args) {
+
         Compare_Numbers.compare_Two_Numbers();
     }
 }
+//=============================================
+//output is
+//        Enter two numbers to compare
+//        20
+//        12
+//        Greatest number is : 20
+//
+//        Process finished with exit code 0
+

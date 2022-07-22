@@ -14,3 +14,13 @@ public class Que7_1 {
         Print_Data.display();
     }
 }
+//===========================
+//output is
+//        Monday
+//        Tuesday
+//        Wednesday
+//        Friday
+//        Saturday
+//        Sunday
+//
+//        Process finished with exit code 0

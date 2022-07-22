@@ -34,6 +34,19 @@ class Compare_Age{
 }
 public class Que6 {
     public static void main(String[] args) {
+
         Compare_Age.what_Is_The_Age();
     }
 }
+//====================================
+//output is
+//        Enter the age of first person
+//        10
+//        Enter the age of second person
+//        20
+//        Enter the age of third person
+//        30
+//        third person is oldest
+//        first person is youngest
+//
+//        Process finished with exit code 0

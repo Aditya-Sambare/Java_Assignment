@@ -24,4 +24,10 @@ public class Que3 {
 
     }
 }
+//==========================
+//output is
+//        Low
+//
+//        Process finished with exit code 0
+
 
