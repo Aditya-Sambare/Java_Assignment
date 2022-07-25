@@ -15,7 +15,7 @@ class Static_Demo2 extends Static_Demo1 {
     public class Que3_2 {
     public static void main(String[] args) {
 //
-        System.out.println("we can not override the static method");
+        System.out.println("we can not override the static method because we call static method by class name and if we call the method by class name overriding is not possible.");
 
     }
 }

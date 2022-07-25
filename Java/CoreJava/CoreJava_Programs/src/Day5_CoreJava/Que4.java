@@ -8,4 +8,4 @@
 //            System.out.println("Static method");
 //        }
 //    }
-//this code is givin error because here the one m1 method is static and the static method does not support method over riding.
+//this code is giving error because here the both method have same parameter and same name and this is not allowed.
