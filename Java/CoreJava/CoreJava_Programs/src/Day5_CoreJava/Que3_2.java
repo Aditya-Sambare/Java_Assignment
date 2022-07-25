@@ -19,7 +19,4 @@ class Static_Demo2 extends Static_Demo1 {
 
     }
 }
-//====================================
-//output is
-//        java: method addition(int,int) is already defined in class Day5_CoreJava.Static_Demo1
-//
+
