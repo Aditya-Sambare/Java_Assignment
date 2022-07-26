@@ -11,7 +11,8 @@ class Print_pattern2{
         }
     }
 }
-public class Que8_pattern2 {
+public class
+Que8_pattern2 {
     public static void main(String[] args) {
         Print_pattern2.display();
     }
