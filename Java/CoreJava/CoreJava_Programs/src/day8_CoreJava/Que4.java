@@ -80,9 +80,11 @@ public class Que4 {
 }
 /*
 out put is
-area for circle is pi*r*r
-area of cylinder is 2πrh+2πr*r
-area of square is a*a
-area of rectangle is l*b
+area for circle is : 314.1592653589793
+area of cylinder is : 942.4777960769379628.3185307179587
+area of square is : 400
+area of rectangle is : 125
+
+Process finished with exit code 0
 
  */
