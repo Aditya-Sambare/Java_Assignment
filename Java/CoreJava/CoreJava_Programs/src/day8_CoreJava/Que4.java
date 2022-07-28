@@ -15,31 +15,36 @@ package day8_CoreJava;
  */
 abstract class Shape{
     abstract void area();
+    static int radius = 10;
+    static int side = 20;
+    static int height = 15;
+    static int length = 5;
+    static int breadth = 25;
 }
 class Circle extends Shape{
     @Override
     void area() {
-        System.out.println("area for circle is pi*r*r");
+        System.out.println("area for circle is : "+ Math.PI*radius*radius);
     }
 }
 class Cylinder extends Circle{
     @Override
     void area() {
         //super.area();
-        System.out.println("area of cylinder is 2πrh+2πr*r");
+        System.out.println("area of cylinder is : "+(2*Math.PI*radius*height)+(2*Math.PI*radius*radius));
     }
 }
 class Square extends Shape{
     @Override
     void area() {
-        System.out.println("area of square is a*a");
+        System.out.println("area of square is : "+ side*side);
     }
 }
 class Rectangle extends Square{
     @Override
     void area() {
         //super.area();
-        System.out.println("area of rectangle is l*b");
+        System.out.println("area of rectangle is : "+length*breadth);
     }
 }
 class TestShape{
