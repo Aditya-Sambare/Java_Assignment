@@ -26,7 +26,7 @@ class Cylinder extends Circle{
     @Override
     void area() {
         //super.area();
-        System.out.println("area of cylinder is 2πrh+2πr2");
+        System.out.println("area of cylinder is 2πrh+2πr*r");
     }
 }
 class Square extends Shape{
@@ -76,7 +76,7 @@ public class Que4 {
 /*
 out put is
 area for circle is pi*r*r
-area of cylinder is 2πrh+2πr2
+area of cylinder is 2πrh+2πr*r
 area of square is a*a
 area of rectangle is l*b
 
