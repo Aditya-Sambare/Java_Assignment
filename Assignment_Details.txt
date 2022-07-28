@@ -1,0 +1,33 @@
+JAVA ASSIGNMENTS
+================================ OPERATING SYSTEM =================================================
+
+LOCATION ON GITHUB::Java_Assignment/OS/
+
+12 JULY 2022 ==> DAY 1 OS ==> TOPIC : OPERATING SYSTEM
+
+==================================== GIT =========================================================
+
+LOCATION ON GITHUB::Java_Assignment/Git/
+
+13 JULY 2022 ==> DAY 1 GIT ==> TOPIC : GIT
+
+==================================== DBMS =======================================================
+
+LOCATION ON GITHUB::Java_Assignment/DataBase/
+
+14 JULY 2022 ==> DAY 1 DBMS ==> TOPIC : DBMS, SQL
+15 JULY 2022 ==> DAY 2 DBMS ==> TOPIC : ERD, SQL
+18 JULY 2022 ==> DAY 3 DBMS ==> TOPIC : ERD MINIMIZATION, SQL
+
+=================================== CORE JAVA ====================================================
+
+LOCATION ON GITHUB::Java_Assignment/Java/CoreJava/CoreJava_Programs/src
+
+19 JULY 2022 ==> DAY 1 CORE_JAVA ==> TOPIC : JDK,JVM,JRE AND FUNDAMENTALS
+20 JULY 2022 ==> DAY 2 CORE_JAVA ==> TOPIC : JAVA FUNDAMENTALS
+21 JULY 2022 ==> DAY 3 CORE_JAVA ==> TOPIC : OPERATORS VARIABLE
+22 JULY 2022 ==> DAY 4 CORE_JAVA ==> TOPIC : CONTROL STATEMENTS
+25 JULY 2022 ==> DAY 5 CORE_JAVA ==> TOPIC : STATIC KEYWORD,EXPRESSION,STATEMENT
+26 JULY 2022 ==> DAY 6 CORE_JAVA ==> TOPIC : ARRAYS,ENCAPSULATION
+27 JULY 2022 ==> DAY 7 CORE_JAVA ==> TOPIC : INHERITANCE
+28 JULY 2022 ==> DAY 8 CORE_JAVA ==> TOPIC : ABSTRACTION
