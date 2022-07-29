@@ -21,4 +21,10 @@ public class Class_Test1 {
         array1.main();
     }
 }
-
+/*
+out put is:
+Array is : 2 15 1 100 70
+1 largest no is : 100
+2 largest no is : 70
+Process finished with exit code 0
+ */
