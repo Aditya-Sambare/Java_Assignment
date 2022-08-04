@@ -5,10 +5,10 @@ package day13_CoreJava;
  *  Employee(emp_id,emp_name,emp_address, emp_sal)
  */
 class Employee{
-    int emp_id = 0;
-    String emp_name = "null";
-    int emp_sal = 0;
-    String emp_address = "null";
+    int emp_id;
+    String emp_name ;
+    int emp_sal;
+    String emp_address;
 
     public Employee(int emp_id, String emp_name, int emp_sal, String emp_address) {
         this.emp_id = emp_id;
@@ -33,3 +33,10 @@ public class Que8_ReinitializeValueUsingConstructor {
         System.out.println(employee);
     }
 }
+/*
+output is
+Employee{emp_id=101, emp_name='aditya', emp_sal=45000, emp_address='viman nagar'}
+
+Process finished with exit code 0
+
+ */
