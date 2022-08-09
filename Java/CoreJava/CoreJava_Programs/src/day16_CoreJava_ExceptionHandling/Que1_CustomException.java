@@ -16,3 +16,52 @@ public class Que1_CustomException {
         transaction.whatTransaction();
     }
 }
+/*
+::::::output is ::::::
+Enter 1 for Deposit and 2 for Withdraw
+Balance is : 45000
+1
+Enter the Amount you want to Deposit
+0
+you have entered wrong amount
+
+Process finished with exit code 0
+------------------------------------------------------------
+Enter 1 for Deposit and 2 for Withdraw
+Balance is : 45000
+1
+Enter the Amount you want to Deposit
+1200
+Deposit Sucessfull Balance is : 46200
+
+Process finished with exit code 0
+------------------------------------------------------------------------------------
+Enter 1 for Deposit and 2 for Withdraw
+Balance is : 45000
+2
+enter the amount you want to withdraw
+0
+Remaining Balance is : 45000
+you have entered wrong amount
+
+Process finished with exit code 0
+----------------------------------------------------------
+Enter 1 for Deposit and 2 for Withdraw
+Balance is : 45000
+2
+enter the amount you want to withdraw
+1200
+Withdraw Sucessfull Remaining Balance is : 43800
+
+Process finished with exit code 0
+--------------------------------------------------
+Enter 1 for Deposit and 2 for Withdraw
+Balance is : 45000
+2
+enter the amount you want to withdraw
+900000
+You dont have sufficient Balance
+
+Process finished with exit code 0
+
+ */

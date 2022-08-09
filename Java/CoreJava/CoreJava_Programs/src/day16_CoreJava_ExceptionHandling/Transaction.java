@@ -28,7 +28,7 @@ public class Transaction {
         }
         else {
             balance = balance - amount;
-            System.out.println("Remaining Balance is : " + balance);
+            System.out.println("Withdraw Sucessfull Remaining Balance is : " + balance);
         }
         if (amount <= 0){
             try {
@@ -50,7 +50,7 @@ public class Transaction {
         }
         else {
             balance = balance + amount;
-            System.out.println("Balance is : "+ balance);
+            System.out.println("Deposit Sucessfull Balance is : "+ balance);
         }
     }
 }
