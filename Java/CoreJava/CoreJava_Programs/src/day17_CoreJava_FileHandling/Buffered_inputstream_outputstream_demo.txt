@@ -1,0 +1,1 @@
+this is buffered input and output stream demo

@@ -1,0 +1,1 @@
+this demo of char array writer and char array reader

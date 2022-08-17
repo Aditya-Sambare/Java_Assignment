@@ -26,7 +26,7 @@ Enter the Amount you want to Deposit
 you have entered wrong amount
 
 Process finished with exit code 0
-------------------------------------------------------------
+---------------------------------------------------------------------------------
 Enter 1 for Deposit and 2 for Withdraw
 Balance is : 45000
 1
@@ -45,7 +45,7 @@ Remaining Balance is : 45000
 you have entered wrong amount
 
 Process finished with exit code 0
-----------------------------------------------------------
+---------------------------------------------------------------------------------------
 Enter 1 for Deposit and 2 for Withdraw
 Balance is : 45000
 2
@@ -54,7 +54,7 @@ enter the amount you want to withdraw
 Withdraw Sucessfull Remaining Balance is : 43800
 
 Process finished with exit code 0
---------------------------------------------------
+-----------------------------------------------------------------------------------
 Enter 1 for Deposit and 2 for Withdraw
 Balance is : 45000
 2
