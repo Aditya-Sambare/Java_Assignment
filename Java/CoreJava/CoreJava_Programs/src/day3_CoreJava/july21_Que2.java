@@ -13,16 +13,11 @@ class EmployeeDetails{
         System.out.println("Company address is : "+companyAddress);
         System.out.println("Employee name is : "+empName);
         System.out.println("Employee Id is : "+empId);
-
-
-
     }
-
 }
 public class july21_Que2 {
     public static void main(String[] args) {
         EmployeeDetails employeeDetails = new EmployeeDetails();
         employeeDetails.showDetails();
-
     }
 }
