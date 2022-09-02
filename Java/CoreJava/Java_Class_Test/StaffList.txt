@@ -1,0 +1,2 @@
+Doctor{experince=2, designation='senior doctor', id=1, name='aditya', age=22, salary=450000}
+Nurse{nurseType='senior', PatientAssigned=2, id=12, name='nandini', age=22, salary=230000}
