@@ -1,6 +1,8 @@
-package September02Test.ConnectionMaker;
+package September02Test;
 
 import September02Test.Book;
+import September02Test.ConnectionMaker.ConnectionDetails;
+import September02Test.ConnectionMaker.ProvideConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

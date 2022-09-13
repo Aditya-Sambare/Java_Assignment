@@ -1,7 +1,5 @@
 package September02Test;
 
-import September02Test.ConnectionMaker.SortOperations;
-
 import java.util.Scanner;
 
 public class Menu {

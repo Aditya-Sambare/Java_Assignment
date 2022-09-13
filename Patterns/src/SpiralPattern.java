@@ -10,6 +10,5 @@ public class SpiralPattern {
                 System.out.println();
             }
         }
-
     }
 }
