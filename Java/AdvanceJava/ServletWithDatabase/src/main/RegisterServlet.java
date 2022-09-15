@@ -1,3 +1,4 @@
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,14 +24,15 @@ public class RegisterServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         Pattern p = Pattern.compile("^[A-Za-z, ]++$");
         Matcher matcher= p.matcher(name);
-        if(!matcher.matches()){
+        if(!matcher.matches()) {
             out.println("invalid name");
-            resp.sendRedirect("index.html");
+            out.println("<a href='index.html'>go back to registration page</a>");
+            out.println("<br>");
         }
-        if (!(mobileNumber.toString().length() == 10)){
+        else if (!(mobileNumber.toString().length() == 10)){
             out.println("invalid mobile number");
-            resp.sendRedirect("index.html");
-        }
+            out.println("<a href='index.html'>go back to registration page</a>");
+        }else{
         Connection connection = ConnectionProvider.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("insert into employee values(?,?,?,?,?)");
@@ -49,3 +51,5 @@ public class RegisterServlet extends HttpServlet {
         }
     }
 }
+}
+
