@@ -28,19 +28,22 @@ public class LoginServlet extends HttpServlet {
         if(name.equals("admin") && password.equals("admin123")){
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("AdminServlet");
             requestDispatcher.forward(req,resp);
-        }else{
-           ResultSet resultSet =  ValidateUser.validateUserAndDisplay(name,password);
-          try{
-              while(resultSet.next()){
-                  out.println("Employee id is "+resultSet.getInt(1)+" Employee password is "+resultSet.getString(2)+
-                          " Employee name is "+resultSet.getString(3)+" Employee address is "+resultSet.getString(4)+"Employee age is "+resultSet.getInt(5));
-                  out.println("<br>");
-                  out.println("<a href='logout'>log out</a>");
-              }
-          } catch (SQLException e) {
-              e.printStackTrace();
-          }
-        }
-
+        }else {
+            if (!httpSession.isNew()) {
+                ResultSet resultSet = ValidateUser.validateUserAndDisplay(name, password);
+                try {
+                    while (resultSet.next()) {
+                        out.println("Employee id is " + resultSet.getInt(1) + " Employee password is " + resultSet.getString(2) +
+                                " Employee name is " + resultSet.getString(3) + " Employee address is " + resultSet.getString(4) + "Employee age is " + resultSet.getInt(5));
+                        out.println("<br>");
+                        out.println("<a href='logout'>log out</a>");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        else{
+            out.println("login again");
+        }}
     }
 }
