@@ -4,13 +4,44 @@
     <meta charset="UTF-8">
     <title>Register User</title>
 </head>
+<style>
+  body{
+    text-align: center;
+        height: 94vh;
+        background: url("https://media.istockphoto.com/photos/retro-music-background-picture-id887280896?b=1&k=20&m=887280896&s=170667a&w=0&h=X1uG68uZ9u8aUT4-ozTatcaKFMZOQPu69EG84W-pPtI=") center/cover no-repeat;
+    }
+    h2{
+    color:white;
+    font-size: 2rem;
+    }
+
+    main{
+    background: rgba(255,255,255,0.5);
+    margin: 4rem;
+    border: 0.2rem solid white;
+    border-radius: 0.5rem;
+    color: black;
+    padding: 1rem 0;
+    }
+    form input{
+    margin: 1rem;
+    padding: 0.5rem;
+    }
+
+</style>
 <body>
-<h2>Register Page</h2>
-<form action="RegisterServlet">
-    <input type="text" name="name" placeholder="ENTER YOUR NAME"><br>
-    <input type="password" name="password" placeholder="ENTER YOUR PASSWORD"><br>
-    <input type="text" name="mobile" placeholder="ENTER YOUR MOBILE NUMBER"><br>
-    <input type="submit"><input type="reset">
-</form>
+<header>
+    <h2>Register Page</h2>
+
+</header>
+<main>
+
+    <form action="RegisterServlet">
+        <input type="text" name="name" placeholder="ENTER YOUR NAME"><br>
+        <input type="password" name="password" placeholder="ENTER YOUR PASSWORD"><br>
+        <input type="text" name="mobile" placeholder="ENTER YOUR MOBILE NUMBER"><br>
+        <input type="submit"><input type="reset">
+    </form>
+</main>
 </body>
 </html>

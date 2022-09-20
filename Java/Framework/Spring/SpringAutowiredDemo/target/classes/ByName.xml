@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="address" class="com.bean.Address">
+<property name="houseName" value="bhairavEstate"/>
+<property name="city" value="pune"/>
+<property name="state" value="maharahtra"/>
+    </bean>
+    <bean id="eaddress" class="com.bean.Address">
+        <property name="houseName" value="gaiaApex"/>
+        <property name="city" value="pune"/>
+        <property name="state" value="maharahtra"/>
+    </bean>
+    <bean name="employee" class="com.bean.Employee" autowire="byName">
+        <property name="eid" value="1101"/>
+        <property name="ename" value="Aditya"/>
+    </bean>
+
+    <bean name="student" class="com.bean.Student" autowire="byName">
+        <property name="sid" value="1111"/>
+        <property name="sname" value="Advait"/>
+    </bean>
+
+</beans>

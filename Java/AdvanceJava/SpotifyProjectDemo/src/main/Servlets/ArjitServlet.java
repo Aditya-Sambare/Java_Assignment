@@ -14,17 +14,17 @@ import java.sql.ResultSet;
 public class ArjitServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
-        resp.setContentType("audio/mpeg");
         PrintWriter printWriter = resp.getWriter();
         ResultSet resultSet = null;
         Connection connection = ConnectionProvider.getConnection();
+        String loc="C:/Users/coditas/Desktop/Java_Assignment/Java/AdvanceJava/SpotifyProjectDemo/src/main/webapp/Arjit/Aayat.mp3";
+        printWriter.println("<audio controls> <source src='"+loc+"' type='audio/mp3'> </audio>");
+
         try{
             PreparedStatement preparedStatement = connection.prepareStatement("select * from arjit_audio");
             resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
-                printWriter.println("<audio controls>" +
-                        "<source src="+resultSet.getString(1)+">" + "</audio>");
+                resultSet.getString(2);
             }
         }catch (Exception e){
             e.printStackTrace();

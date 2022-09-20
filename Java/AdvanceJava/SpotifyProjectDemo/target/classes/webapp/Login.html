@@ -4,17 +4,46 @@
     <meta charset="UTF-8">
     <title>Login User</title>
 </head>
+<style>
+  body{
+    text-align: center;
+        height: 94vh;
+        background: url("https://media.istockphoto.com/photos/retro-music-background-picture-id887280896?b=1&k=20&m=887280896&s=170667a&w=0&h=X1uG68uZ9u8aUT4-ozTatcaKFMZOQPu69EG84W-pPtI=") center/cover no-repeat;
+    }
+    h1,h4{
+    color:white
+    }
+    p, a{
+    font-weight: bolder;
+    color: black;
+    font-size: 1.25rem;
+    }
+
+    main{
+    background: rgba(255,255,255,0.5);
+    margin: 4rem;
+    border: 0.2rem solid white;
+    border-radius: 0.5rem;
+    color: black;
+    padding: 1rem 0;
+    }
+    form input{
+    margin: 1rem;
+    padding: 0.5rem;
+    }
+</style>
 <body>
-<audio controls>
-    <source src="Arjit\Aayat.mp3" type="audio/mp3">
-</audio>
-<h2>Login Page</h2>
+<header>
+    <h1>Login Page</h1>
+</header>
+<main>
 <form action="LoginServlet">
     <input type="text" name="name" placeholder="ENTER YOUR NAME"><br>
     <input type="text" name="password" placeholder="ENTER YOUR PASSWORD"><br>
     <input TYPE="submit"><input TYPE="reset">
 </form>
-<h4>If you are new user register here</h4>
-<a href="Register.html">Click here</a>
+    <p>If you are new user register here</p>
+    <a href="Register.html">Click here</a>
+</main>
 </body>
 </html>

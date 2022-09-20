@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -25,6 +26,7 @@ public class LoginServlet extends HttpServlet {
         PrintWriter printWriter = resp.getWriter();
         String name = req.getParameter("name");
         String password = req.getParameter("password");
+        HttpSession httpsession=req.getSession();
         try{
             PreparedStatement preparedStatement = connection.prepareStatement("select * from user where name = ? and password = ?");
             preparedStatement.setString(1,name);
@@ -36,7 +38,7 @@ public class LoginServlet extends HttpServlet {
             }
             if(name.equals(name1) && password.equals(password1)){
                 RequestDispatcher requestDispatcher = req.getRequestDispatcher("WelcomePage.html");
-                requestDispatcher.forward(req,resp);
+                requestDispatcher.include(req,resp);
             }else{
                 printWriter.println("Invalid Credintials");
                 printWriter.println("<a href='Login.html'>Click here to login</a>");
