@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean class="com.bean.Participants" id="p1">
+        <property name="name" value="dharmesh"/>
+        <property name="address" value="Ahemdabad"/>
+    </bean>
+    <bean class="com.bean.Participants" id="p2">
+        <property name="name" value="shakti"/>
+        <property name="address" value="mumbai"/>
+    </bean>
+    <bean class="com.bean.Participants" id="p3">
+    <property name="name" value="raghav"/>
+    <property name="address" value="dehradun"/>
+</bean>
+
+<bean class="com.bean.DID" id="did">
+    <property name="seasonName" value="Season2"/>
+    <property name="brandPartners">
+        <list>
+            <value>bournvita</value>
+            <value>tvs</value>
+            <value>bajaj</value>
+            <value>honda</value>
+        </list>
+    </property>
+    <property name="participants">
+        <map>
+            <entry key-ref="p1" value="teamRemo"></entry>
+            <entry key-ref="p2" value="teamgeeta"></entry>
+            <entry key-ref="p3" value="teamterrance"></entry>
+        </map>
+    </property>
+
+</bean>
+
+</beans>

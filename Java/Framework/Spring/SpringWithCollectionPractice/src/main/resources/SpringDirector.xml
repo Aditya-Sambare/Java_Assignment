@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean class="com.bean.Director" id="director1">
+        <property name="name" value="Sanjay Leela Bhansali"/>
+        <property name="mobileno">
+            <list>
+                <value>9130644322</value>
+                <value>9862315222</value>
+                <value>8926243537</value>
+            </list>
+        </property>
+        <property name="movies">
+            <set>
+                <value>Ram Leela</value>
+                <value>Bajirao Mastani</value>
+                <value>Padmavat</value>
+            </set>
+        </property>
+    </bean>
+    <bean class="com.bean.Director" id="director2">
+        <property name="name" value="Rajamouli"/>
+        <property name="mobileno">
+            <list>
+                <value>7803526722</value>
+                <value>9835272903</value>
+                <value>8906342672</value>
+            </list>
+        </property>
+        <property name="movies">
+            <set>
+                <value>RRR</value>
+                <value>Bahubali 2</value>
+                <value>Bahubali</value>
+            </set>
+        </property>
+    </bean>
+</beans>
