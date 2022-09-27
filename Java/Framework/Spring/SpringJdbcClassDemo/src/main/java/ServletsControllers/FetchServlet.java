@@ -1,5 +1,6 @@
 package ServletsControllers;
 
+import com.bean.Book;
 import com.dao.BookDao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -12,19 +13,23 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
-@WebServlet("/InsertServlet")
-public class InsertServlet extends HttpServlet {
+@WebServlet("/FetchServlet")
+public class FetchServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter printWriter = resp.getWriter();
-        String bookname = req.getParameter("bookname");
-        String authorname = req.getParameter("authorname");
-        float price = Float.parseFloat(req.getParameter("price"));
+        HttpSession httpSession = req.getSession();
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("SpringJT.xml");
         BookDao bookDao = (BookDao) applicationContext.getBean("bdao");
-        int execution = bookDao.insertBook(bookname,authorname,price);
-        printWriter.println(execution+" record inserted");
+        List<Book> list = new ArrayList<>();
+               list =  bookDao.fetchAllBooks();
+        for(Book b: list) {
+            printWriter.println(b);
+        }
+
     }
 }

@@ -45,8 +45,8 @@ public class BookDao {
 //            System.out.println("Someting went wrong");
 //        }
     }
-    public void fetchAllBooks(){
-        System.out.println("Available Books are : ");
+    public List<Book> fetchAllBooks(){
+//        System.out.println("Available Books are : ");
         String sqlQuery = "select * from JTBookDetails";
         List<Book> list = jdbcTemplate.query(sqlQuery, new RowMapper() {
             @Override
@@ -59,23 +59,25 @@ public class BookDao {
                 return book;
             }
         });
-        System.out.println(list);
+//        System.out.println(list);
+        return list;
     }
-    public void updateBook() throws IOException {
-        System.out.println("================================================================================================================");
-        System.out.println("Enter the book name and updated price");
-        String bookname = bufferedReader.readLine();
-        float price = Float.parseFloat(bufferedReader.readLine());
+    public int updateBook(float price, String bookname) throws IOException {
+//        System.out.println("================================================================================================================");
+//        System.out.println("Enter the book name and updated price");
+//        String bookname = bufferedReader.readLine();
+//        float price = Float.parseFloat(bufferedReader.readLine());
         String sqlQuery = "update JTBookDetails set price = ? where bookname=?";
         int execution = jdbcTemplate.update(sqlQuery,price,bookname);
-        if (execution>0){
-            System.out.println("================================================================================================================");
-            System.out.println(execution +" book updated");
-        }else{
-            System.out.println("================================================================================================================");
-
-            System.out.println("Something went wrong");
-        }
+//        if (execution>0){
+//            System.out.println("================================================================================================================");
+//            System.out.println(execution +" book updated");
+//        }else{
+//            System.out.println("================================================================================================================");
+//
+//            System.out.println("Something went wrong");
+//        }
+        return execution;
     }
     public void deleteBook() throws IOException {
         System.out.println("================================================================================================================");

@@ -9,22 +9,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/InsertServlet")
-public class InsertServlet extends HttpServlet {
+@WebServlet("/UpdateServlet")
+public class UpdateServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter printWriter = resp.getWriter();
-        String bookname = req.getParameter("bookname");
-        String authorname = req.getParameter("authorname");
-        float price = Float.parseFloat(req.getParameter("price"));
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("SpringJT.xml");
         BookDao bookDao = (BookDao) applicationContext.getBean("bdao");
-        int execution = bookDao.insertBook(bookname,authorname,price);
-        printWriter.println(execution+" record inserted");
+        String bookname = req.getParameter("bookname");
+        float price = Float.parseFloat(req.getParameter("price"));
+        int execution = bookDao.updateBook(price,bookname);
+        printWriter.println(execution+" record updated");
     }
 }
