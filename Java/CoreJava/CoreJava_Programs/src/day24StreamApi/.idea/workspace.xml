@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="099d415e-b34d-4193-9d35-636117f70e54" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/com/bean/manytomany/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/com/bean/manytomany/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/com/bean/onetomany/Answer1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/com/bean/onetomany/Question1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/com/bean/onetoone/Answer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/com/bean/onetoone/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/controller/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/com/bean/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/com/bean/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/com/bean/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/com/bean/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/java/dao/StudentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/target/classes/com/bean/MainApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/target/classes/com/bean/MainApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/target/classes/com/bean/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/target/classes/com/bean/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/target/classes/dao/StudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/target/classes/dao/StudentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Framework/Hibernate/HibernateCRUDExample/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/com/Project/EmployeeProject/EmployeeProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/com/Project/EmployeeProject/EmployeeProjectApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/daoClasses/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/com/Project/EmployeeProject/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/daoClasses/EmployeeIdName.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/com/Project/EmployeeProject/entity/EmployeeIdName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/daoClasses/OperationsWithDataBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/daoClasses/OperationsWithDatabaseImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/daoClasses/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/com/Project/EmployeeProject/services/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/daoClasses/ServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/java/com/Project/EmployeeProject/services/ServiceImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ProjectWithAngular/EmployeeProject/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FPaGa5c1qI8cBjJeqmITZQMt6z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/coditas/Desktop/Java_Assignment/Java/CoreJava/CoreJava_Programs"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="099d415e-b34d-4193-9d35-636117f70e54" name="Changes" comment="" />
+      <created>1664396079129</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664396079129</updated>
+    </task>
+    <servers />
+  </component>
+</project>

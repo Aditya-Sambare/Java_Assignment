@@ -26,5 +26,11 @@
             true
         </property>
         <mapping class="com.bean.Student"/>
+<!--        <mapping class="com.bean.onetoone.Answer"/>-->
+<!--        <mapping class="com.bean.onetoone.Question"/>-->
+<!--        <mapping class="com.bean.onetomany.Question1"/>-->
+<!--        <mapping class="com.bean.onetomany.Answer1"/>-->
+<!--        <mapping class="com.bean.manytomany.Employee"/>-->
+<!--        <mapping class="com.bean.manytomany.Project"/>-->
     </session-factory>
 </hibernate-configuration>

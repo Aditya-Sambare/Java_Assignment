@@ -1,10 +1,14 @@
 package dao;
 
 import com.bean.Student;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 
 import javax.persistence.Query;
 import java.io.BufferedReader;
@@ -29,6 +33,7 @@ public void insertRecord() throws IOException {
     student.setName(name);
     student.setCity(city);
     student.setAge(age);
+
 int t = (int) session.save(student);
 if (t > 0){
     System.out.println("Record Inserted");
@@ -78,4 +83,38 @@ public void deleteRecords() throws IOException {
         transaction.rollback();
     }
 }
+public void fetchByRestriction() throws IOException {
+    Session session = sessionFactory.openSession();
+    Transaction transaction = session.beginTransaction();
+    System.out.println("Enter the age above which you want records");
+    int age = Integer.parseInt(bufferedReader.readLine());
+    Criteria criteria = session.createCriteria(Student.class);
+    criteria.add(Restrictions.gt("age",age));
+    System.out.println(criteria.list());
 }
+public void fetchOrderBy() throws IOException {
+    Session session = sessionFactory.openSession();
+    Criteria criteria = session.createCriteria(Student.class);
+    System.out.println("ENTER 1 FOR ASCENDING AND 2 FOR DESCINDING");
+    int option = Integer.parseInt(bufferedReader.readLine());
+    switch(option){
+        case 1:
+            criteria.addOrder(Order.asc("name"));
+            System.out.println(criteria.list());
+            break;
+        case 2:
+            criteria.addOrder(Order.desc("name"));
+            System.out.println(criteria.list());
+            break;
+    }
+}
+public void fetchByProjection() throws IOException {
+    Session session = sessionFactory.openSession();
+    Criteria criteria = session.createCriteria(Student.class);
+    System.out.println("Enter the property on which you want the projection");
+    String property = bufferedReader.readLine();
+    criteria.setProjection(Projections.property(property));
+    System.out.println(criteria.list());
+}
+}
+

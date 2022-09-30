@@ -1,13 +1,13 @@
 package controller;
 
-import daoClasses.Employee;
-import daoClasses.EmployeeIdName;
-import daoClasses.Service;
+import com.Project.EmployeeProject.entity.Employee;
+import com.Project.EmployeeProject.services.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
 
 @RestController
 public class Controller{
@@ -17,13 +17,17 @@ public class Controller{
     @GetMapping("/user/{id}")
     public Employee getEmployeeDetails(@PathVariable int id)
     {
-        return service.getParticularEmployeeDetails(id);
+        return service.fetchParticularUserDetails(id);
     }
+
+
     @GetMapping("/users")
-    public String getEmployeeIdAndName()
+    public HashMap<Integer, String> getEmployeeIdAndName()
     {
-          return "Hello";
+        return service.fetchUserIdAndName();
     }
+
+
     @GetMapping("/error")
     public String error()
     {

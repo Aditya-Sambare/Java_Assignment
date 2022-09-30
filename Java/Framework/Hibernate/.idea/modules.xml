@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Hibernate.iml" filepath="$PROJECT_DIR$/.idea/Hibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hibernate1Assignment/Hibernate1Assignment.iml" filepath="$PROJECT_DIR$/Hibernate1Assignment/Hibernate1Assignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HibernateAnnotationsDemo/HibernateAnnotationsDemo.iml" filepath="$PROJECT_DIR$/HibernateAnnotationsDemo/HibernateAnnotationsDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HibernateCRUDExample/HibernateCRUDExample.iml" filepath="$PROJECT_DIR$/HibernateCRUDExample/HibernateCRUDExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HibernateClassDemo/HibernateClassDemo.iml" filepath="$PROJECT_DIR$/HibernateClassDemo/HibernateClassDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hibernate_Inheritance_ClassDemo1/hibernate_Inheritance_ClassDemo1.iml" filepath="$PROJECT_DIR$/hibernate_Inheritance_ClassDemo1/hibernate_Inheritance_ClassDemo1.iml" />
+    </modules>
+  </component>
+</project>

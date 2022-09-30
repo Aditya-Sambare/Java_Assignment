@@ -25,6 +25,6 @@
         <property name="show_sql">
             true
         </property>
-        <mapping class="daoClasses.Employee"/>
+        <mapping class="com.Project.EmployeeProject.entity.Employee"/>
     </session-factory>
 </hibernate-configuration>

@@ -8,8 +8,12 @@ public class EmployeeProjectApplication {
 
 	public static void main(String[] args) {
 
-			SpringApplication.run(EmployeeProjectApplication.class, args);
-
+		  try {
+			  SpringApplication.run(EmployeeProjectApplication.class, args);
+		  }catch(Exception e)
+		  {
+			  System.out.println(e.getMessage());
+		  }
 	}
 
 }
