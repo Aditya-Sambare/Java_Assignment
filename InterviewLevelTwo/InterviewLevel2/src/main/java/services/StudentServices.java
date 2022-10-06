@@ -12,7 +12,7 @@ public class StudentServices {
         Session session = sessionFactory.openSession();
         session.save(student);
         session.close();
-        session.flush();
+//        session.flush();
         return "Student Added";
 
     }

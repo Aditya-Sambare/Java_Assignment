@@ -1,5 +1,4 @@
 package controllerServlets;
-
 import databaseConnectionDao.ConnectionDataBaseImplementation;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -43,12 +42,12 @@ public class InsertStudentServlet extends HttpServlet {
             status2 = "fail";
         }
         SubjectPojo subject1 = new SubjectPojo();
-        subject1.setStudentId(studentId);
+        //subject1.setStudentId(studentId);
         subject1.setSubjectName(Subject1);
         subject1.setMarks(marks1);
         subject1.setStatus(status1);
         SubjectPojo subject2 = new SubjectPojo();
-        subject2.setStudentId(studentId);
+        //subject2.setStudentId(studentId);
         subject2.setSubjectName(Subject2);
         subject2.setMarks(marks2);
         subject2.setStatus(status2);
@@ -67,8 +66,7 @@ public class InsertStudentServlet extends HttpServlet {
         studentPojo.setStudentId(studentId);
         studentPojo.setStudentName(studentName);
         studentPojo.setSubjects(subjectList);
-        String insertionStatus = StudentServices.insertStudentRecord(studentPojo);
-        printWriter.println(insertionStatus);
+        StudentServices.insertStudentRecord(studentPojo);
     }
     }
 

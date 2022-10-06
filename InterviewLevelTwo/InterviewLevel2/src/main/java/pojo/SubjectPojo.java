@@ -5,19 +5,30 @@ import javax.persistence.*;
 @Entity
 public class SubjectPojo {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int subjectId;
     String subjectName;
     int marks;
     String status;
-    int studentId;
+    @ManyToMany
+    StudentPojo studentPojo;
 
     public SubjectPojo() {
     }
 
-    public SubjectPojo(String subjectName, int marks, String status, int studentId) {
+    public SubjectPojo(int subjectId, String subjectName, int marks, String status) {
+        this.subjectId = subjectId;
         this.subjectName = subjectName;
         this.marks = marks;
         this.status = status;
-        //this.studentId = studentId;
+    }
+
+    public int getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
     }
 
     public String getSubjectName() {
@@ -44,21 +55,13 @@ public class SubjectPojo {
         this.status = status;
     }
 
-    public int getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
-    }
-
     @Override
     public String toString() {
         return "SubjectPojo{" +
-                "subjectName='" + subjectName + '\'' +
+                "subjectId=" + subjectId +
+                ", subjectName='" + subjectName + '\'' +
                 ", marks=" + marks +
                 ", status='" + status + '\'' +
-                ", studentId='" + studentId + '\'' +
                 '}';
     }
 }

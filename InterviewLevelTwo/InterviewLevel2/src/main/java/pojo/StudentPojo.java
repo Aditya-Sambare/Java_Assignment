@@ -1,9 +1,6 @@
 package pojo;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.security.auth.Subject;
 import java.util.List;
 
@@ -12,7 +9,7 @@ public class StudentPojo {
     @Id
     int studentId;
     String studentName;
-    @OneToMany
+    @ManyToMany
     List<SubjectPojo> subjects;
 
     public StudentPojo() {
