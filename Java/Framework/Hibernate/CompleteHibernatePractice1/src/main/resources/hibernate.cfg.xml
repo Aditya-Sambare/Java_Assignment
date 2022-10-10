@@ -27,5 +27,7 @@
         </property>
         <mapping class="com.bean.SaveFirstObjectInDataBase"/>
         <mapping class="com.bean.DiffrentAnnotationsInHibernate"/>
+        <mapping class="com.bean.FetchObjectFromDatabaseUsingGetAndLoadMethod"/>
+        <mapping class="com.bean.EmbedableClass"/>
     </session-factory>
 </hibernate-configuration>
