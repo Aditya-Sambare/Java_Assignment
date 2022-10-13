@@ -2,11 +2,13 @@ package crudOperations;
 
 import Entities.Book;
 import Entities.Library;
-import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -37,6 +39,7 @@ public void insertbook(){
     entityManager.persist(library);
     entityManager.getTransaction().commit();
     entityManager.close();
+    System.out.println("Record inserted");
     System.out.println("..........................................................................................");
 
 }
@@ -54,6 +57,7 @@ public void insertLibrary(){
     entityManager.persist(library);
     entityManager.getTransaction().commit();
     entityManager.close();
+    System.out.println("Record inserted");
     System.out.println("..........................................................................................");
 
 }
@@ -71,6 +75,7 @@ book = entityManager.find(Book.class,id);
 book.setPrice(price);
     entityManager.getTransaction().commit();
     entityManager.close();
+    System.out.println("Record updated");
     System.out.println("..........................................................................................");
 
 }
@@ -84,9 +89,9 @@ public void fetchbook(){
     entityManager.getTransaction().begin();
     book = entityManager.find(Book.class,id);
     System.out.println("..........................................................................................");
-    System.out.println(book.getBookId());
-    System.out.println(book.getBookName());
-    System.out.println(book.getPrice());
+    System.out.println("Book id is : "+book.getBookId());
+    System.out.println("Book name is : "+book.getBookName());
+    System.out.println("Book price is : "+book.getPrice());
     System.out.println("..........................................................................................");
 
 }
@@ -106,7 +111,20 @@ public void deletebook(){
     entityManager.remove(book);
     entityManager.getTransaction().commit();
     entityManager.close();
+    System.out.println("Record deleted");
     System.out.println("..........................................................................................");
-
 }
+    public void fetchByCondition(){
+        System.out.println("..........................................................................................");
+        System.out.println("Enter the price of book for which you want to get record and above");
+        int price = Integer.parseInt(sc.nextLine());
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Book> criteriaQuery=criteriaBuilder.createQuery(Book.class);
+        Root<Book> root=criteriaQuery.from(Book.class);
+        criteriaQuery.select(root).where(criteriaBuilder.ge(root.<Number>get("price"),price));
+        System.out.println(entityManager.createQuery(criteriaQuery).getResultList());
+        System.out.println(entityManager.createQuery(criteriaQuery).getResultList().get(0).getLibrary());
+        System.out.println("..........................................................................................");
+    }
 }

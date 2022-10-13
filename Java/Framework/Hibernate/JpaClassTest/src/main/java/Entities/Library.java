@@ -44,7 +44,7 @@ public class Library {
         return "Library{" +
                 "libId=" + libId +
                 ", libName='" + libName + '\'' +
-                ", books=" + books +
+
                 '}';
     }
 }

@@ -15,7 +15,7 @@ public class Menu {
 
             System.out.println("Enter 1 to exit\nEnter 2 to insert book into any library\nEnter 3 to update book from any library" +
                     "\nEnter 4 to delete book from any library\nEnter 5 to fetch a book details from any library" +
-                    "\nEnter 6 to insert new library");
+                    "\nEnter 6 to insert new library\nEnter 7 to fetch by price");
             System.out.println("..........................................................................................");
 
             int option = Integer.parseInt(sc.next());
@@ -37,6 +37,10 @@ public class Menu {
                 break;
             case 6:
                 crudOperations.insertLibrary();
+                break;
+            case 7:
+                crudOperations.fetchByCondition();
+                break;
         }
     }
     }

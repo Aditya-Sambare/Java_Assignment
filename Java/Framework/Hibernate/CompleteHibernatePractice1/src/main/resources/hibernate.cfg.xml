@@ -20,14 +20,20 @@
             org.hibernate.dialect.MySQL5Dialect
         </property>
         <property name="hibernate.hbm2ddl.auto">
-            update
+            create
         </property>
         <property name="show_sql">
             true
         </property>
-        <mapping class="com.bean.SaveFirstObjectInDataBase"/>
-        <mapping class="com.bean.DiffrentAnnotationsInHibernate"/>
-        <mapping class="com.bean.FetchObjectFromDatabaseUsingGetAndLoadMethod"/>
-        <mapping class="com.bean.EmbedableClass"/>
+<!--        <mapping class="com.bean.SaveFirstObjectInDataBase"/>-->
+<!--        <mapping class="com.bean.DiffrentAnnotationsInHibernate"/>-->
+<!--        <mapping class="com.bean.FetchObjectFromDatabaseUsingGetAndLoadMethod"/>-->
+<!--        <mapping class="com.bean.EmbedableClass"/>-->
+<!--        <mapping class="com.bean.relationships.oneToOne.Answer"/>-->
+<!--        <mapping class="com.bean.relationships.oneToOne.Question"/>-->
+<!--        <mapping class="com.bean.relationships.oneToManyAndManyToOne.Answer1"/>-->
+<!--        <mapping class="com.bean.relationships.oneToManyAndManyToOne.Question1"/>-->
+        <mapping class="com.bean.relationships.manyToMany.Employee"/>
+        <mapping class="com.bean.relationships.manyToMany.Projects"/>
     </session-factory>
 </hibernate-configuration>

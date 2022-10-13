@@ -55,7 +55,7 @@ public class Book {
                 "bookId=" + bookId +
                 ", bookName='" + bookName + '\'' +
                 ", price=" + price +
-                ", library=" + library +
+
                 '}';
     }
 }
