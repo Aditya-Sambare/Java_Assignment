@@ -49,7 +49,7 @@ class Result3 {
             System.out.println();
         }
         }
-public class Question3 {
+public class Question3_Insertionsort1 {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 

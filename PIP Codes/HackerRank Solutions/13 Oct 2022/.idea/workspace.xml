@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="20a2198b-7ac2-4e9e-b8e6-4633b174a395" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../18 Oct 2022/.idea/18 Oct 2022.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../18 Oct 2022/Question1_Encryption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../18 Oct 2022/Question2_ExtraLongFactorial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../18 Oct 2022/Question3_PickingNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../18 Oct 2022/Question4_TheTimeInWords.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../18 Oct 2022/Question5_GradingStudents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../18 Oct 2022/out/production/18 Oct 2022/.idea/18 Oct 2022.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../14 Oct 2022/Solution1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../14 Oct 2022/Solution1_SherlockAndValidString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../14 Oct 2022/Solution2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../14 Oct 2022/Solution2_BirthdayCakeCandles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../14 Oct 2022/Solution3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../14 Oct 2022/Solution3_AVeryBigSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../14 Oct 2022/Solution4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../14 Oct 2022/Solution4_CompareTheTriplets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../14 Oct 2022/Solution5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../14 Oct 2022/Solution5_SimpleArraySum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../17 Oct 2022/Question1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../17 Oct 2022/Question1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../17 Oct 2022/Question2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../17 Oct 2022/Question2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../17 Oct 2022/out/production/17 Oct 2022/Question1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../17 Oct 2022/out/production/17 Oct 2022/Question1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../17 Oct 2022/out/production/17 Oct 2022/Result1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../17 Oct 2022/out/production/17 Oct 2022/Result1.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2GJ10WFJKe3eBPq9d8VmZYnXXoP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/coditas/Desktop/Java_Assignment/PIP Codes/HackerRank Solutions/13 Oct 2022"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="20a2198b-7ac2-4e9e-b8e6-4633b174a395" name="Changes" comment="" />
+      <created>1666091649228</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666091649228</updated>
+    </task>
+    <servers />
+  </component>
+</project>

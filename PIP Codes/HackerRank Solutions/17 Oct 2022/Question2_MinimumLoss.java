@@ -31,15 +31,13 @@ class Result2 {
                 int diffrence = (int) (price.get(i)-price.get(j));
                 if(diffrence < minLoss && diffrence > 0){
                     minLoss = diffrence;
-                    System.out.println(minLoss);
                 }
             }
         }
         return minLoss;
     }
-
 }
-public class Question2 {
+public class Question2_MinimumLoss {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));

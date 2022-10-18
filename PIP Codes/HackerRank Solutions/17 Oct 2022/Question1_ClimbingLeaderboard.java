@@ -29,21 +29,47 @@ class Result1 {
         // Write your code here
         int rank = 0;
         ranked =ranked.stream().distinct().collect(toList());
-        // System.out.println(rankedList);
+
         List<Integer> list = new ArrayList<>();
+        System.out.println(ranked);
+        System.out.println(player);
         for (int i = 0; i < player.size(); i++) {
-            rank = 1;
             for (int j = 0; j < ranked.size(); j++) {
-                if(player.get(i)<ranked.get(j)){
+                int player1 = player.get(i);
+                int ranked1 = ranked.get(j);
+                rank = 1;
+                if(player1<ranked1){
                     rank++;
+                    continue;
                 }
             }
+            System.out.println(rank);
             list.add(rank);
         }
         return list;
+//        Collections.reverse(player);
+//        List<Integer> rankedList =ranked.stream().distinct().collect(toList());
+//        List<Integer> list = new ArrayList<>();
+//        for (int i = 0; i < player.size(); i++) {
+//            for (int j = 0; j < rankedList.size(); j++) {
+//                int player1 = player.get(i);
+//                int ranked1 = rankedList.get(j);
+//                if(player1>ranked1 || player1==ranked1){
+//                    list.add(j+1);
+//                    break;
+//                }
+//            }
+//        }
+//        int player2 = player.get(player.size()-1);
+//        int ranked2 = rankedList.get(rankedList.size()-1);
+//        if(player2 < ranked2){
+//            list.add(rankedList.size()+1);
+//        }
+//        Collections.reverse(list);
+//        return list;
     }
 }
-public class Question1 {
+public class Question1_ClimbingLeaderboard {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
        // BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
