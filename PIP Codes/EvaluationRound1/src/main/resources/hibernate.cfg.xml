@@ -11,7 +11,7 @@
             com.mysql.jdbc.Driver
         </property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost:3306/evaluation_practice
+            jdbc:mysql://localhost:3306/pip_evaluation_round1
         </property>
         <property name="hibernate.connection.username">
             root
@@ -25,8 +25,8 @@
         <property name="show_sql">
             true
         </property>
-        <mapping class="entity.Marks"/>
-        <mapping class="entity.Student"/>
-        <mapping class="entity.Subject"/>
+        <mapping class="entity.ConferenceRoom"/>
+        <mapping class="entity.User"/>
+        <mapping class="entity.RoomBooking"/>
     </session-factory>
 </hibernate-configuration>

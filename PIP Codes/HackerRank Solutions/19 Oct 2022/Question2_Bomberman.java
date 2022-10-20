@@ -151,6 +151,7 @@ public class Question2_Bomberman {
                 .collect(toList());
 
         List<String> result = Result2.bomberMan(n, grid);
+        System.out.println(result);
 //
 //        bufferedWriter.write(
 //                result.stream()
