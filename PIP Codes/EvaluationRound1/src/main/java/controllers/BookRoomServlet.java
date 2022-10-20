@@ -66,19 +66,3 @@ public class BookRoomServlet extends HttpServlet {
         printWriter.println("<a href='WelcomePage.html'>click here to go back to welcome page</a>");
     }
 }
-//String date=new Scanner().nextLine();
-//
-//SimpleDateFormat format=new SimpleDateFormat(“dd-mm-yyyy”);
-//
-//Date date=format.parse(date)
-////////////////////////////////////
-//Scanner input = new Scanner(System.in);
-// System.out.print("Enter first time (hh:mm aa): ");
-// String time = input.nextLine();
-// System.out.println();
-// System.out.print("Enter second time (hh:mm aa): ");
-// String time2 = input.nextLine();
-// System.out.println();
-// DateFormat sdf = new SimpleDateFormat("hh:mm aa");
-// Date d1 = sdf.parse(time);
-// Date d2 = sdf.parse(time2);
