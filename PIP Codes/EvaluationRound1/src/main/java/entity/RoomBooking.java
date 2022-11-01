@@ -1,22 +1,41 @@
 package entity;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Time;
+
 
 @Entity
 public class RoomBooking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int bookinId;
-    Date bookingDate;
-    Date startingTime;
-    Date endingTime;
+
+    @Temporal(TemporalType.DATE)
+    java.util.Date bookingDate;
+    Time startingTime;
+    Time endingTime;
+    String bookingStatus;
     @ManyToOne
     User user;
     @ManyToOne
     ConferenceRoom conferenceRoom;
 
+    public void setBookingDate(java.util.Date bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
     public RoomBooking() {
+    }
+
+    public String getBookingStatus() {
+        return bookingStatus;
+    }
+
+    public void setBookingStatus(String bookingStatus) {
+        this.bookingStatus = bookingStatus;
     }
 
     public int getBookinId() {
@@ -28,26 +47,26 @@ public class RoomBooking {
     }
 
     public Date getBookingDate() {
-        return bookingDate;
+        return (Date) bookingDate;
     }
 
     public void setBookingDate(Date bookingDate) {
         this.bookingDate = bookingDate;
     }
 
-    public Date getStartingTime() {
+    public Time getStartingTime() {
         return startingTime;
     }
 
-    public void setStartingTime(Date startingTime) {
+    public void setStartingTime(Time startingTime) {
         this.startingTime = startingTime;
     }
 
-    public Date getEndingTime() {
+    public Time getEndingTime() {
         return endingTime;
     }
 
-    public void setEndingTime(Date endingTime) {
+    public void setEndingTime(Time endingTime) {
         this.endingTime = endingTime;
     }
 

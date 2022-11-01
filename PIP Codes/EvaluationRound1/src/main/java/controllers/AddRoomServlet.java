@@ -25,8 +25,8 @@ public class AddRoomServlet extends HttpServlet {
         conferenceRoom.setRoomId(roomId);
         conferenceRoom.setRoomName(roomName);
         DatabaseServices databaseServices = new DatabaseServicesImplementation();
-        databaseServices.addRoom(conferenceRoom);
-        printWriter.println("room added");
+        String  result = databaseServices.addRoom(conferenceRoom);
+        printWriter.println(result);
         printWriter.println("<a href='WelcomePage.html'>click here to go back to welcome page</a>");
     }
 }

@@ -1,14 +1,14 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "roomName" }) })
 public class ConferenceRoom {
     @Id
     int roomId;
+    @Column(unique = true)
     String roomName;
     @OneToMany
     List<RoomBooking> roomBookings;

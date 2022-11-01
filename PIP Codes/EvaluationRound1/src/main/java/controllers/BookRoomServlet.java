@@ -13,10 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.sql.Time;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Timer;
 
 @WebServlet("/BookRoomServlet")
 public class BookRoomServlet extends HttpServlet {
@@ -28,33 +30,18 @@ public class BookRoomServlet extends HttpServlet {
         int roomId = Integer.parseInt(req.getParameter("roomId"));
         String date1 = req.getParameter("date");
         SimpleDateFormat format=new SimpleDateFormat("dd-mm-yyyy");
-        Date date;
-        try {
-             date=format.parse(date1);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-        Date startingTime;
-        Date endingTime;
-        String time1 = req.getParameter("stratingTime");
-        DateFormat format1 = new SimpleDateFormat("hh:mm");
-        try {
-             startingTime = format1.parse(time1);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-
-
-        String time2 = req.getParameter("endingTime");
+        Date date = java.sql.Date.valueOf(date1);
+        System.out.println(date);
+        String time1 = req.getParameter("startingTime")+":00" ;
+        String time2 = req.getParameter("endingTime")+":00";
+        System.out.println(time1);
+        System.out.println(time2);
+        Time startingTime = Time.valueOf(time1);
+        Time endingTime = Time.valueOf(time2);
 //        DateFormat format2 = new SimpleDateFormat("hh:mm");
-        try {
-             endingTime = format1.parse(time2);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
         DatabaseServices databaseServices = new DatabaseServicesImplementation();
         RoomBooking roomBooking = new RoomBooking();
-        roomBooking.setBookingDate(date);
+        roomBooking.setBookingDate((java.sql.Date) date);
         roomBooking.setStartingTime(startingTime);
         roomBooking.setEndingTime(endingTime);
         User user = databaseServices.getuser(userId);

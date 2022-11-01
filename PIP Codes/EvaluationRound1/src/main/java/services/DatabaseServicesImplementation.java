@@ -1,12 +1,13 @@
 package services;
-
 import entity.ConferenceRoom;
 import entity.RoomBooking;
 import entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import utils.SessionFactoryProvider;
-
+import javax.persistence.Query;
+import java.util.List;
+import java.util.stream.Collectors;
 public class DatabaseServicesImplementation implements DatabaseServices{
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
     @Override
@@ -19,12 +20,21 @@ public class DatabaseServicesImplementation implements DatabaseServices{
     }
 
     @Override
-    public void addRoom(ConferenceRoom room) {
-        Session session = sessionFactory.openSession();
+    public String addRoom(final ConferenceRoom room) {
+        String result = null;        Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.save(room);
-        session.getTransaction().commit();
+        Query query = session.createQuery("from ConferenceRoom");
+        List<ConferenceRoom> list = query.getResultList();
+        List<ConferenceRoom> list1 = list.stream().filter(s->s.getRoomName().equals(room.getRoomName())).collect(Collectors.toList());
+        if (list1.size()>0){
+            result = "Duplicate room name not allowed";
+        }else {
+            session.save(room);
+            session.getTransaction().commit();
+            result = "Room Added";
+        }
         session.close();
+        return result;
     }
 
     @Override
@@ -44,11 +54,16 @@ public class DatabaseServicesImplementation implements DatabaseServices{
     }
 
     @Override
-    public void addRoomBooking(RoomBooking roomBooking) {
+    public String addRoomBooking(RoomBooking roomBooking) {
+        String result = null;
         Session session = sessionFactory.openSession();
         session.beginTransaction();
+        Query query = session.createQuery("from RoomBooking");
+        List<RoomBooking> list = query.getResultList();
+        List<RoomBooking> list1 = list.stream().filter(s ->s.getBookingDate().equals(roomBooking.getBookingDate()) && s.getStartingTime().equals(roomBooking.getStartingTime()) && s.getEndingTime().equals(roomBooking.getEndingTime()))
         session.save(roomBooking);
         session.getTransaction().commit();
         session.close();
+        return  result;
     }
 }

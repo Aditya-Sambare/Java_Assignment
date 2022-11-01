@@ -6,8 +6,8 @@ import entity.User;
 
 public interface DatabaseServices {
     public void addUser(User user);
-    public void addRoom(ConferenceRoom room);
+    public String addRoom(ConferenceRoom room);
     public User getuser(int userId);
     public ConferenceRoom getroom(int roomId);
-    public void addRoomBooking(RoomBooking roomBooking);
+    public String addRoomBooking(RoomBooking roomBooking);
 }
