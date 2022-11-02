@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Room Availability</title>
+</head>
+<style>
+    body{
+    text-align:center
+    }
+</style>
+<body>
+<hr>
+<h1>VIEW ROOM AVAILABILITY</h1>
+<hr>
+<form action="ViewRoomAvailabilityServlet">
+  <h2>ENTER ROOM ID FOR WHICH YOU WANT TO VIEW AVAILABILITY</h2>
+  <input type="number" name="roomId"><br>
+  <hr>
+  <h2>ENTER THE DATE FOR WHICH YOU WANT TO VIEW AVAILABILITY</h2>
+  <input type="date" name="date"><br>
+  <hr>
+  <h2>ENTER THE START TIME</h2>
+  <input type="time" name="startTime"><br>
+  <hr>
+    <h2>ENTER THE END TIME</h2>
+    <input type="time" name="endTime"><br>
+    <hr>
+  <input type="submit"><br>
+</form>
+</body>
+</html>

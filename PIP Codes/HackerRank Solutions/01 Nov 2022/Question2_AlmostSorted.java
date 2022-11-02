@@ -35,28 +35,34 @@ class Result2 {
             }else{
                 System.out.println("no");
             }
-        }else{
-            List<Integer> list2 = new ArrayList<>();
-            List<Integer> list3 = new ArrayList<>();
-            for (int i = 0; i <= (list.get(0)-1) ; i++) {
-                list2.add(list1.get(i));
-            }
-            for (int i = list.get(0); i <= list.size(); i++) {
-                list3.add(list1.get(i));
-            }
-        //    System.out.println(list3);
-            Collections.reverse(list3);
-            list2.addAll(list3);
-        //    System.out.println(list2);
-            for (int i =(list.get(list.size()-1)+1); i < list1.size(); i++) {
-                list2.add(list1.get(i));
-            }
-         //   System.out.println(list2);
-            if (list2.equals(arr)){
-                System.out.println("yes");
-                System.out.println("reverse "+ (list.get(0)+1) +" "+ (list.get(list.size()-1)+1));
-            }else{
+        } else{
+            if (arr.size()%2 != 0){
                 System.out.println("no");
+            }else {
+                List<Integer> list2 = new ArrayList<>();
+                List<Integer> list3 = new ArrayList<>();
+                for (int i = 0; i <= (list.get(0) - 1); i++) {
+                    list2.add(list1.get(i));
+                }
+                for (int i = list.get(0); i <= list.size(); i++) {
+                    list3.add(list1.get(i));
+                }
+                //    System.out.println(list3);
+                Collections.reverse(list3);
+                list2.addAll(list3);
+                //    System.out.println(list2);
+                for (int i = (list.get(list.size() - 1) + 1); i < list1.size(); i++) {
+                    list2.add(list1.get(i));
+                }
+                System.out.println(list);
+
+                System.out.println(list2.equals(arr));
+                if (list2.equals(arr)) {
+                    System.out.println("yes");
+                    System.out.println("reverse " + (list.get(0) + 1) + " " + (list.get(list.size() - 1) + 1));
+                }else {
+                    System.out.println("no");
+                }
             }
         }
     }

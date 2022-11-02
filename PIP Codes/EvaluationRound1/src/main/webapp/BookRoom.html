@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <title>Book Room</title>
 </head>
+<style>
+    body{
+    text-align:center
+    }
+</style>
 <body>
 <form action="BookRoomServlet">
-    <h4>enter the user id</h4>
+    <hr>
+    <h1>BOOK THE CONFERENCE ROOM</h1>
+    <hr>
+    <h2>ENTER THE USER ID</h2>
     <input type="number" name="userId">
-    <h4>enter the room id</h4>
+    <h2>ENTER THE ROOM ID</h2>
     <input type="number" name="roomId">
-    <h4>enter the date for which you want to book</h4>
+    <h2>ENTER THE DATE FOR WHICH YOU WANT TO BOOK ROOM</h2>
     <input type="date" name="date"><br>
-    <h4>enter the starting time</h4>
+    <h2>ENTER THE STARTING TIME</h2>
     <input type="time" name="startingTime"><br>
-    <h4>enter the ending time</h4>
+    <h2>ENTER THE ENDING TIME</h2>
     <input type="time" name="endingTime"><br>
     <input type="submit">
+    <hr>
 </form>
 </body>
 </html>

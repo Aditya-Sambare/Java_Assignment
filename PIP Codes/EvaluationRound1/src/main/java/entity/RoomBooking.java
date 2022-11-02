@@ -1,7 +1,5 @@
 package entity;
 
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
@@ -11,7 +9,7 @@ import java.sql.Time;
 public class RoomBooking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int bookinId;
+    int bookingId;
 
     @Temporal(TemporalType.DATE)
     java.util.Date bookingDate;
@@ -38,12 +36,12 @@ public class RoomBooking {
         this.bookingStatus = bookingStatus;
     }
 
-    public int getBookinId() {
-        return bookinId;
+    public int getBookingId() {
+        return bookingId;
     }
 
-    public void setBookinId(int bookinId) {
-        this.bookinId = bookinId;
+    public void setBookingId(int bookingId) {
+        this.bookingId = bookingId;
     }
 
     public Date getBookingDate() {
@@ -89,7 +87,7 @@ public class RoomBooking {
     @Override
     public String toString() {
         return "RoomBooking{" +
-                "bookinId=" + bookinId +
+                "bookinId=" + bookingId +
                 ", bookingDate=" + bookingDate +
                 ", startingTime=" + startingTime +
                 ", endingTime=" + endingTime +

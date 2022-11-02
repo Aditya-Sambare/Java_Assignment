@@ -5,6 +5,7 @@ import org.hibernate.annotations.CascadeType;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class User{
     @Id
     int userId;
     String userName;
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     @Cascade(CascadeType.PERSIST)
     List<RoomBooking> userRoomBookings;
 

@@ -1,5 +1,7 @@
 package entity;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,7 +12,8 @@ public class ConferenceRoom {
     int roomId;
     @Column(unique = true)
     String roomName;
-    @OneToMany
+    @OneToMany(mappedBy = "conferenceRoom")
+    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     List<RoomBooking> roomBookings;
 
     public ConferenceRoom() {
@@ -39,7 +42,6 @@ public class ConferenceRoom {
     public void setRoomBookings(List<RoomBooking> roomBookings) {
         this.roomBookings = roomBookings;
     }
-
     @Override
     public String toString() {
         return "ConferenceRoom{" +
