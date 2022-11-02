@@ -5,13 +5,11 @@ import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 class Result2 {
-
     /*
      * Complete the 'almostSorted' function below.
      *
      * The function accepts INTEGER_ARRAY arr as parameter.
      */
-
     public static void almostSorted(List<Integer> arr) {
         // Write your code here
         List<Integer> list1 = new ArrayList<>();
@@ -66,7 +64,6 @@ class Result2 {
             }
         }
     }
-
 }
 public class Question2_AlmostSorted {
     public static void main(String[] args) throws IOException {
