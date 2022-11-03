@@ -15,10 +15,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.Time;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Timer;
 
 @WebServlet("/BookRoomServlet")
 public class BookRoomServlet extends HttpServlet {
@@ -39,7 +35,7 @@ public class BookRoomServlet extends HttpServlet {
         roomBooking.setBookingDate(date);
         roomBooking.setStartingTime(startingTime);
         roomBooking.setEndingTime(endingTime);
-        User user = databaseServices.getuser(userId);
+        User user = databaseServices.getUser(userId);
         ConferenceRoom room = databaseServices.getroom(roomId);
         roomBooking.setConferenceRoom(room);
         roomBooking.setUser(user);

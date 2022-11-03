@@ -1,5 +1,7 @@
 package controllers;
 
+import entity.ConferenceRoom;
+import entity.RoomBooking;
 import services.DatabaseServices;
 import services.DatabaseServicesImplementation;
 
@@ -12,6 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 
 @WebServlet("/ViewRoomAvailabilityServlet")
 public class ViewRoomAvailabilityServlet extends HttpServlet {
@@ -19,7 +22,6 @@ public class ViewRoomAvailabilityServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter printWriter = resp.getWriter();
-        int roomId = Integer.parseInt(req.getParameter("roomId"));
         String date1 = req.getParameter("date");
         Date date = java.sql.Date.valueOf(date1);
         String time1 = req.getParameter("startTime")+":00" ;
@@ -27,8 +29,20 @@ public class ViewRoomAvailabilityServlet extends HttpServlet {
         Time startingTime = Time.valueOf(time1);
         Time endingTime = Time.valueOf(time2);
         DatabaseServices databaseServices = new DatabaseServicesImplementation();
-String result = databaseServices.viewRoomAvailability(roomId,date,startingTime,endingTime);
-printWriter.println(result);
+List<ConferenceRoom> conferenceRoomList = databaseServices.viewRoomAvailability(date,startingTime,endingTime);
+if (conferenceRoomList.size() == 0){
+    printWriter.println("<h1>Rooms Not Available</h1>");
+}else{
+printWriter.println("<h1>Available Rooms</h1>");
+        for (ConferenceRoom conferenceRoom : conferenceRoomList) {
+            printWriter.println("<hr>");
+            printWriter.println("ROOM ID IS :"+conferenceRoom.getRoomId());
+            printWriter.println("<br>");
+            printWriter.println("ROOM NAME IS :" + conferenceRoom.getRoomName());
+            printWriter.println("<br>");
+            printWriter.println("<hr>");
+        }
+}
         printWriter.println("<a href='WelcomePage.html'>click here to go back to welcome page</a>");
 
     }

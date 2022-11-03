@@ -18,10 +18,8 @@ public class AddUserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter printWriter = resp.getWriter();
-        int userId = Integer.parseInt(req.getParameter("userId"));
         String userName = req.getParameter("userName");
         User user = new User();
-        user.setUserId(userId);
         user.setUserName(userName);
         DatabaseServices databaseServices = new DatabaseServicesImplementation();
         databaseServices.addUser(user);

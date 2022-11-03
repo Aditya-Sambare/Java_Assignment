@@ -9,6 +9,7 @@ import java.util.List;
 @Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "roomName" }) })
 public class ConferenceRoom {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int roomId;
     @Column(unique = true)
     String roomName;

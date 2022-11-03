@@ -41,7 +41,7 @@ public class DatabaseServicesImplementation implements DatabaseServices{
     }
 
     @Override
-    public User getuser(int userId) {
+    public User getUser(int userId) {
         Session session = sessionFactory.openSession();
         User user = session.get(User.class,userId);
         session.close();
@@ -65,8 +65,7 @@ public class DatabaseServicesImplementation implements DatabaseServices{
         query.setParameter("dt",roomBooking.getBookingDate());
         query.setParameter("id",id);
         List<RoomBooking> list=query.getResultList();
-
-
+        boolean exists = false;
          if (list.size()==0){
              roomBooking.setBookingStatus("booked");
             session.save(roomBooking);
@@ -75,18 +74,30 @@ public class DatabaseServicesImplementation implements DatabaseServices{
             result = "RoomBooked";
         }else{
         for(int i = 0; i < list.size(); i++){
-            if ((list.get(i).getEndingTime().before(roomBooking.getStartingTime()) || list.get(i).getStartingTime().after(roomBooking.getEndingTime()))){
-                roomBooking.setBookingStatus("booked");
-                session.save(roomBooking);
-                session.getTransaction().commit();
-                session.close();
-                result = "RoomBooked";
-                break;
-            }else{
-                result = "Room not available";
+                if((roomBooking.getStartingTime().after(list.get(i).getStartingTime()) && roomBooking.getStartingTime().before(list.get(i).getEndingTime())) ||(roomBooking.getEndingTime().after(list.get(i).getStartingTime()) && roomBooking.getEndingTime().before(list.get(i).getEndingTime())) ||(roomBooking.getStartingTime().before(list.get(i).getStartingTime())&& roomBooking.getEndingTime().after(list.get(i).getEndingTime())))
+                {
+                    if(list.get(i).getBookingStatus().equals("cancelled")){
+                        exists = true;
+                    }else {
+                        exists = false;
+                        break;
+                    }
+                }else{
+                    exists = true;
+                }
             }
-        }}
+        if (exists){
+            roomBooking.setBookingStatus("booked");
+            session.save(roomBooking);
+            session.getTransaction().commit();
+            session.close();
+            result = "RoomBooked";
+        }else{
+            result = "Room Not Available";
+        }
      //   List<RoomBooking> list1 = list.stream().filter(s ->s.getBookingDate().equals(roomBooking.getBookingDate()) && s.getStartingTime().equals(roomBooking.getStartingTime()) && s.getEndingTime().equals(roomBooking.getEndingTime()));
+
+    }
         return  result;
     }
 
@@ -116,25 +127,34 @@ public class DatabaseServicesImplementation implements DatabaseServices{
     }
 
     @Override
-    public String viewRoomAvailability(int roomId, Date date, Time startTime, Time endTime) {
+    public List<ConferenceRoom> viewRoomAvailability(Date date, Time startTime, Time endTime) {
         String result = null;
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Query query = session.createQuery("from RoomBooking where bookingDate =:dt and conferenceRoom.roomId=:id");
+        Query query1 = session.createQuery("from ConferenceRoom");
+        Query query = session.createQuery("from RoomBooking where bookingDate =:dt");
         query.setParameter("dt",date);
-        query.setParameter("id",roomId);
-        List<RoomBooking> list=query.getResultList();
-        if (list.size()==0){
-            result = "Room Available";
+        List<Integer> roomIdList = new ArrayList<>();
+        List<ConferenceRoom> conferenceRoomList = query1.getResultList();
+        List<RoomBooking> roomBookingList = query.getResultList();
+        if (roomBookingList.size()==0){
+            return conferenceRoomList;
         }else {
-            for(int i = 0; i < list.size(); i++){
-                if ((list.get(i).getEndingTime().before(startTime) || list.get(i).getStartingTime().after(endTime))){
-                    result = "Room Available";
-                }else{
-                    result = "Room not available";
+            for(int i = 0; i < roomBookingList.size(); i++){
+                if((startTime.after(roomBookingList.get(i).getStartingTime()) && startTime.before(roomBookingList.get(i).getEndingTime())) ||(endTime.after(roomBookingList.get(i).getStartingTime()) && endTime.before(roomBookingList.get(i).getEndingTime())) ||(startTime.before(roomBookingList.get(i).getStartingTime())&& endTime.after(roomBookingList.get(i).getEndingTime())))
+                {
+                    if (roomBookingList.get(i).getBookingStatus().equals("booked")) {
+                        int id = roomBookingList.get(i).getConferenceRoom().getRoomId();
+                        if(conferenceRoomList.stream().filter(s->s.getRoomId()==id).findFirst().isPresent())
+                        {
+                            ConferenceRoom conferenceRoom=conferenceRoomList.stream().filter(s->s.getRoomId()==id).findFirst().get();
+                            conferenceRoomList.remove(conferenceRoom);
+                        }
+
+                    }
                 }
             }
         }
-        return result;
+        return conferenceRoomList;
     }
 }

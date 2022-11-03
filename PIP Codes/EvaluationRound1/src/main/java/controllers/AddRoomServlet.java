@@ -19,10 +19,8 @@ public class AddRoomServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter printWriter = resp.getWriter();
-        int roomId = Integer.parseInt(req.getParameter("roomId"));
         String roomName = req.getParameter("roomName");
         ConferenceRoom conferenceRoom = new ConferenceRoom();
-        conferenceRoom.setRoomId(roomId);
         conferenceRoom.setRoomName(roomName);
         DatabaseServices databaseServices = new DatabaseServicesImplementation();
         String  result = databaseServices.addRoom(conferenceRoom);
