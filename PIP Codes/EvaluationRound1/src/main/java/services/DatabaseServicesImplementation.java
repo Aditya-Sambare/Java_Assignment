@@ -30,7 +30,7 @@ public class DatabaseServicesImplementation implements DatabaseServices{
         List<ConferenceRoom> list = query.getResultList();
         List<ConferenceRoom> list1 = list.stream().filter(s->s.getRoomName().equals(room.getRoomName())).collect(Collectors.toList());
         if (list1.size()>0){
-            result = "Duplicate room name not allowed";
+            result = "Duplicate Room Name Not Allowed";
         }else {
             session.save(room);
             session.getTransaction().commit();
@@ -71,7 +71,7 @@ public class DatabaseServicesImplementation implements DatabaseServices{
             session.save(roomBooking);
             session.getTransaction().commit();
             session.close();
-            result = "RoomBooked";
+            result = "Room Booked";
         }else{
         for(int i = 0; i < list.size(); i++){
                 if((roomBooking.getStartingTime().after(list.get(i).getStartingTime()) && roomBooking.getStartingTime().before(list.get(i).getEndingTime())) ||(roomBooking.getEndingTime().after(list.get(i).getStartingTime()) && roomBooking.getEndingTime().before(list.get(i).getEndingTime())) ||(roomBooking.getStartingTime().before(list.get(i).getStartingTime())&& roomBooking.getEndingTime().after(list.get(i).getEndingTime())))
@@ -91,7 +91,7 @@ public class DatabaseServicesImplementation implements DatabaseServices{
             session.save(roomBooking);
             session.getTransaction().commit();
             session.close();
-            result = "RoomBooked";
+            result = "Room Booked";
         }else{
             result = "Room Not Available";
         }
@@ -109,7 +109,7 @@ public class DatabaseServicesImplementation implements DatabaseServices{
         RoomBooking roomBooking = session.get(RoomBooking.class,bookingId);
         roomBooking.setBookingStatus("cancelled");
         session.save(roomBooking);
-        result = "booking cancelled";
+        result = "Booking Cancelled";
         session.getTransaction().commit();
         session.close();
         return result;

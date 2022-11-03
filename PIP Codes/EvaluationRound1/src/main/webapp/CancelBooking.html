@@ -6,16 +6,27 @@
 </head>
 <style>
     body{
-    text-align:center
+    text-align:center;
+     background: url("https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWVldGluZyUyMHJvb218ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60") center/cover no-repeat;
+    }
+    main{
+    background: rgba(255,255,255,0.5);
+    margin: 4rem;
+    border: 0.2rem solid white;
+    border-radius: 0.5rem;
+    color: black;
     }
 </style>
-<body><hr>
+<body>
+<main>
+<hr>
 <h1>CANCEL BOOKING</h1><hr>
 <form action="CancelBookingServlet">
-    <H2>ENTER ROOM BOOKING ID</H2>
+    <H4>ENTER ROOM BOOKING ID</H4>
     <input type="number" name="roomBookingId"><br>
     <input type="submit"><br>
     <hr>
 </form>
+</main>
 </body>
 </html>

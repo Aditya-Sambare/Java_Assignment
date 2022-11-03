@@ -6,26 +6,36 @@
 </head>
 <style>
     body{
-    text-align:center
+    text-align:center;
+     background: url("https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWVldGluZyUyMHJvb218ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60") center/cover no-repeat;
+    }
+    main{
+    background: rgba(255,255,255,0.5);
+    margin: 4rem;
+    border: 0.2rem solid white;
+    border-radius: 0.5rem;
+    color: black;
     }
 </style>
 <body>
+<main>
 <form action="BookRoomServlet">
     <hr>
     <h1>BOOK THE CONFERENCE ROOM</h1>
     <hr>
-    <h2>ENTER THE USER ID</h2>
+    <h4>ENTER THE USER ID</h4>
     <input type="number" name="userId">
-    <h2>ENTER THE ROOM ID</h2>
+    <h4>ENTER THE ROOM ID</h4>
     <input type="number" name="roomId">
-    <h2>ENTER THE DATE FOR WHICH YOU WANT TO BOOK ROOM</h2>
+    <h4>ENTER THE DATE FOR WHICH YOU WANT TO BOOK ROOM</h4>
     <input type="date" name="date"><br>
-    <h2>ENTER THE STARTING TIME</h2>
+    <h4>ENTER THE STARTING TIME</h4>
     <input type="time" name="startingTime"><br>
-    <h2>ENTER THE ENDING TIME</h2>
+    <h4>ENTER THE ENDING TIME</h4>
     <input type="time" name="endingTime"><br>
     <input type="submit">
     <hr>
 </form>
+</main>
 </body>
 </html>

@@ -20,8 +20,25 @@ public class CancelBookingServlet extends HttpServlet {
         int roomBookingId = Integer.parseInt(req.getParameter("roomBookingId"));
         DatabaseServices databaseServices = new DatabaseServicesImplementation();
         String result = databaseServices.cancelRoomBooking(roomBookingId);
-        printWriter.println(result);
-        printWriter.println("<a href='WelcomePage.html'>click here to go back to welcome page</a>");
-
+        printWriter.println("<html lang=\"en\">" +
+                "<style>\n" +
+                "    body{\n" +
+                "    text-align:center;\n" +
+                "    background: url(\"https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWVldGluZyUyMHJvb218ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60\") center/cover no-repeat;\n" +
+                "    }\n" +
+                "    main{\n" +
+                "    background: rgba(255,255,255,0.5);\n" +
+                "    margin: 4rem;\n" +
+                "    border: 0.2rem solid white;\n" +
+                "    border-radius: 0.5rem;\n" +
+                "    color: black;\n" +
+                "    }\n" +
+                "</style>\n" +
+                "<body>\n" +
+                "<main>");
+        printWriter.println("<h2>"+result+"</h2><hr>");
+        printWriter.println("<h4><a href='WelcomePage.html'>click here to go back to welcome page</a></h4>");
+        printWriter.println("</main></body>\n" +
+                "</html>");
     }
 }
