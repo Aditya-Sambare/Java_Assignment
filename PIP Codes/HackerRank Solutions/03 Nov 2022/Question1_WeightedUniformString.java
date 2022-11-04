@@ -23,16 +23,24 @@ class Result1 {
 
     public static List<String> weightedUniformStrings(String s, List<Integer> queries) {
         // Write your code here
-List<String> resultList = new ArrayList<>();
-List<Integer> stringWeightList = new ArrayList<>();
-char characterInString = 0;
-        for (int i = 0; i < s.length(); i++) {
-            stringWeightList.add(i,s.charAt(i)-96);
-            if (s.charAt(i)==characterInString){
-                stringWeightList.add(i,stringWeightList.get(i-1)+(s.charAt(i)-96));
+        List<String> resultList = new ArrayList<>();
+        List<Integer> stringWeightList = new ArrayList<>();
+        char characterInString = s.charAt(0);
+        stringWeightList.add(characterInString-96);
+        int count = 1;
+        for(int  i=1;i <s.length() ;i++){
+            char currentChar = s.charAt(i);
+            if(currentChar==characterInString){
+                count++;
+                stringWeightList.add((currentChar-96)*count);
             }
-            characterInString = s.charAt(i);
+            else{
+                count = 1 ;
+                characterInString = currentChar;
+                stringWeightList.add((currentChar-96)*count);
+            }
         }
+        System.out.println(stringWeightList);
         for (Integer i : queries){
             if (stringWeightList.contains(i)){
                 resultList.add("Yes");
@@ -64,6 +72,7 @@ public class Question1_WeightedUniformString {
                 .collect(toList());
 
         List<String> result = Result1.weightedUniformStrings(s, queries);
+        System.out.println(result);
 //
 //        bufferedWriter.write(
 //                result.stream()
