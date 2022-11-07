@@ -145,7 +145,7 @@ public class DatabaseServicesImplementation implements DatabaseServices{
                 {
                     if (roomBookingList.get(i).getBookingStatus().equals("booked")) {
                         int id = roomBookingList.get(i).getConferenceRoom().getRoomId();
-                        if(conferenceRoomList.stream().filter(s->s.getRoomId()==id).findFirst().isPresent())
+                        if(conferenceRoomList.stream().anyMatch(s->s.getRoomId()==id))
                         {
                             ConferenceRoom conferenceRoom=conferenceRoomList.stream().filter(s->s.getRoomId()==id).findFirst().get();
                             conferenceRoomList.remove(conferenceRoom);

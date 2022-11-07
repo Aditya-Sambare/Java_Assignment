@@ -45,9 +45,9 @@ public class ViewBookingDetailsServlet extends HttpServlet {
        if (roomBookingList.size()==0){
            printWriter.println("<h1>SORRY NO BOOKINGS AVILABLE</h1>");
        }else {
+           printWriter.println("<h1>AVILABLE BOOKINGS</h1>");
            for (RoomBooking roomBooking : roomBookingList) {
                printWriter.println("<h5>");
-               printWriter.println("<h1>AVILABLE BOOKINGS</h1>");
                printWriter.println("<hr>");
                printWriter.println("ROOM BOOKING ID IS : " + roomBooking.getBookingId());
                printWriter.println("<br>");

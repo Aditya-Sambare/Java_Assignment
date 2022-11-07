@@ -25,6 +25,7 @@
         <property name="show_sql">
             true
         </property>
+        <property name=""></property>
         <mapping class="entity.ConferenceRoom"/>
         <mapping class="entity.User"/>
         <mapping class="entity.RoomBooking"/>
