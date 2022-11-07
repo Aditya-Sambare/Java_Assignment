@@ -13,5 +13,9 @@ public interface RoomBookingsRepository extends JpaRepository<RoomBookings,Integ
     @Query("select r from RoomBookings r where r.conferenceRoom.roomId = ?1 and r.bookingDate = ?2")
     List<RoomBookings> bookingsByDateAndRoomID(int roomId, Date bookingDate);
 
+    @Query("select r from RoomBookings r where r.bookingDate = ?1")
+    List<RoomBookings> findBookingByDate(java.sql.Date bookingDate);
+
+
 
 }

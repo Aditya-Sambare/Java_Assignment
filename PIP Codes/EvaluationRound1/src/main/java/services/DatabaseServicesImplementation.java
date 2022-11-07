@@ -74,7 +74,14 @@ public class DatabaseServicesImplementation implements DatabaseServices{
             result = "Room Booked";
         }else{
         for(int i = 0; i < list.size(); i++){
-                if((roomBooking.getStartingTime().after(list.get(i).getStartingTime()) && roomBooking.getStartingTime().before(list.get(i).getEndingTime())) ||(roomBooking.getEndingTime().after(list.get(i).getStartingTime()) && roomBooking.getEndingTime().before(list.get(i).getEndingTime())) ||(roomBooking.getStartingTime().before(list.get(i).getStartingTime())&& roomBooking.getEndingTime().after(list.get(i).getEndingTime())))
+                if((roomBooking.getStartingTime().after(list.get(i).getStartingTime()) &&
+                        roomBooking.getStartingTime().before(list.get(i).getEndingTime()))
+                        ||(roomBooking.getEndingTime().after(list.get(i).getStartingTime())
+                        && roomBooking.getEndingTime().before(list.get(i).getEndingTime()))
+                        ||(roomBooking.getStartingTime().before(list.get(i).getStartingTime())&&
+                        roomBooking.getEndingTime().after(list.get(i).getEndingTime()))||
+                        roomBooking.getStartingTime().equals(list.get(i).getStartingTime())||
+                        roomBooking.getEndingTime().equals(list.get(i).getEndingTime()))
                 {
                     if(list.get(i).getBookingStatus().equals("cancelled")){
                         exists = true;
@@ -141,7 +148,14 @@ public class DatabaseServicesImplementation implements DatabaseServices{
             return conferenceRoomList;
         }else {
             for(int i = 0; i < roomBookingList.size(); i++){
-                if((startTime.after(roomBookingList.get(i).getStartingTime()) && startTime.before(roomBookingList.get(i).getEndingTime())) ||(endTime.after(roomBookingList.get(i).getStartingTime()) && endTime.before(roomBookingList.get(i).getEndingTime())) ||(startTime.before(roomBookingList.get(i).getStartingTime())&& endTime.after(roomBookingList.get(i).getEndingTime())))
+                if((startTime.after(roomBookingList.get(i).getStartingTime()) &&
+                        startTime.before(roomBookingList.get(i).getEndingTime()))
+                        ||(endTime.after(roomBookingList.get(i).getStartingTime()) &&
+                        endTime.before(roomBookingList.get(i).getEndingTime()))
+                        ||(startTime.before(roomBookingList.get(i).getStartingTime())&&
+                        endTime.after(roomBookingList.get(i).getEndingTime()))||
+                        startTime.equals(roomBookingList.get(i).getStartingTime())||
+                        endTime.equals(roomBookingList.get(i).getEndingTime()))
                 {
                     if (roomBookingList.get(i).getBookingStatus().equals("booked")) {
                         int id = roomBookingList.get(i).getConferenceRoom().getRoomId();
