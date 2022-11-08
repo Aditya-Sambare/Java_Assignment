@@ -2,10 +2,9 @@ package com.aditya.pipEvaluationRound2.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -15,5 +14,6 @@ public class Menu {
     private int itemId;
     private String itemName;
     private float itemPrice;
-    private int itemQuantity;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "menu")
+    private List<OrderItemList> orderItemLists = new ArrayList<>();
 }

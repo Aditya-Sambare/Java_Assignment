@@ -4,20 +4,16 @@ import lombok.Data;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Data
 public class Orders {
     @Id
     private int orderId;
-    @ManyToOne
-    private Tables table;
-    @OneToMany
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
-    private List<Menu> menuList;
-    @OneToOne
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
-    private Bill bill;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "orders")
+    private List<OrderItemList> itemlist = new ArrayList<>();
+    @OneToOne(cascade = CascadeType.ALL)
+    private Bookings bookings;
 
 }

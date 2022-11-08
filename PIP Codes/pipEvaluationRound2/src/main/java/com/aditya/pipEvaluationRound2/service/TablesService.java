@@ -6,5 +6,5 @@ import org.springframework.http.ResponseEntity;
 
 public interface TablesService {
     public ResponseEntity addTables();
-    public ResponseEntity BookTable(TablesDto tablesDto);
+ //   public ResponseEntity BookTable(TablesDto tablesDto);
 }

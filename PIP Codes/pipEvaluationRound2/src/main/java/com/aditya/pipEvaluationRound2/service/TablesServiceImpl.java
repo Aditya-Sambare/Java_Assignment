@@ -109,26 +109,26 @@ public class TablesServiceImpl implements TablesService{
       }
     }
 
-    @Override
-    public ResponseEntity BookTable(TablesDto tablesDto) {
-      Tables tables = new Tables();
-      tables.setTableBookingDate(tablesDto.getTableBookingDate());
-      tables.setTableBookingTime(tablesDto.getTableBookingTime());
-      tables.setTableId(tablesDto.getTableId());
-      tables.setTableName(tablesDto.getTableName());
-      tables.setTableSeats(tablesDto.getTableSeats());
-      tables.setTableStatus("booked");
-      List<Tables> tablesList = tablesRepository.findTableBySeats(tablesDto.getTableSeats());
-      List<Tables> tablesList1 = tablesList.stream().filter(s->s.getTableBookingDate().before(tablesDto.getTableBookingDate())||s.getTableBookingDate().after(tablesDto.getTableBookingDate())).collect(Collectors.toList());
-        if (tablesList1.size() < 0 ){
-          Tables tables1 = tablesRepository.save(tables);
-          if (tables1 == null){
-            return new ResponseEntity<>(Optional.of("table not Booked"),HttpStatus.NOT_ACCEPTABLE);
-          }else{
-            return new ResponseEntity(Optional.of(tables1),HttpStatus.ACCEPTED);
-          }
-        }else{
-          return null;
-        }
-    }
+//    @Override
+//    public ResponseEntity BookTable(TablesDto tablesDto) {
+//      Tables tables = new Tables();
+//      tables.setTableBookingDate(tablesDto.getTableBookingDate());
+//      tables.setTableBookingTime(tablesDto.getTableBookingTime());
+//      tables.setTableId(tablesDto.getTableId());
+//      tables.setTableName(tablesDto.getTableName());
+//      tables.setTableSeats(tablesDto.getTableSeats());
+//      tables.setTableStatus("booked");
+//      List<Tables> tablesList = tablesRepository.findTableBySeats(tablesDto.getTableSeats());
+//      List<Tables> tablesList1 = tablesList.stream().filter(s->s.getTableBookingDate().before(tablesDto.getTableBookingDate())||s.getTableBookingDate().after(tablesDto.getTableBookingDate())).collect(Collectors.toList());
+//        if (tablesList1.size() < 0 ){
+//          Tables tables1 = tablesRepository.save(tables);
+//          if (tables1 == null){
+//            return new ResponseEntity<>(Optional.of("table not Booked"),HttpStatus.NOT_ACCEPTABLE);
+//          }else{
+//            return new ResponseEntity(Optional.of(tables1),HttpStatus.ACCEPTED);
+//          }
+//        }else{
+//          return null;
+//        }
+//    }
 }

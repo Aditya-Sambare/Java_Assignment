@@ -23,12 +23,12 @@ public class TablesController {
         }
     }
 
-    @PostMapping("/book")
-    public ResponseEntity bookTables(@RequestBody TablesDto tablesDto) {
-        try {
-            return tablesService.BookTable(tablesDto);
-        } catch (Exception exception) {
-            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+//    @PostMapping("/book")
+//    public ResponseEntity bookTables(@RequestBody TablesDto tablesDto) {
+//        try {
+//            return tablesService.BookTable(tablesDto);
+//        } catch (Exception exception) {
+//            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
 }

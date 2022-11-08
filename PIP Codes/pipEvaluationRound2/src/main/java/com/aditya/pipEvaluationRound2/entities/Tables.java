@@ -17,12 +17,6 @@ public class Tables {
     private String tableName;
     private int tableSeats;
     private String tableStatus;
-    private Date tableBookingDate;
-    private Time tableBookingTime;
-    @OneToMany(mappedBy = "table")
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
-    private List<Bill> bill;
-    @OneToMany(mappedBy = "table")
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
-    private List<Orders> order;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "tables")
+    private List<Bookings> bookingsList;
 }
