@@ -1,8 +1,12 @@
 package com.aditya.pipEvaluationRound2.service;
 
-import com.aditya.pipEvaluationRound2.dto.TablesDto;
+import com.aditya.pipEvaluationRound2.dto.requestDto.TableBookingDto;
+import com.aditya.pipEvaluationRound2.entities.Bookings;
 import com.aditya.pipEvaluationRound2.entities.Tables;
+import com.aditya.pipEvaluationRound2.entities.User;
+import com.aditya.pipEvaluationRound2.repository.BookingsRepository;
 import com.aditya.pipEvaluationRound2.repository.TablesRepository;
+import com.aditya.pipEvaluationRound2.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +21,11 @@ import java.util.stream.Collectors;
 public class TablesServiceImpl implements TablesService{
   @Autowired
   TablesRepository tablesRepository;
+  @Autowired
+  BookingsRepository bookingsRepository;
+
+  @Autowired
+  UserRepository userRepository;
     @Override
     public ResponseEntity addTables() {
         Tables tables1 = new Tables();
@@ -100,35 +109,38 @@ public class TablesServiceImpl implements TablesService{
       tablesList.add(tables46);
       tablesList.add(tables38);
       tablesList.add(tables48);
-      List<Tables> tablesList1 = tablesRepository.saveAll(tablesList);
-      if (tablesList1==null){
+      List<Tables> tablesList2 = tablesRepository.saveAll(tablesList);
+      if (tablesList2==null){
         return new ResponseEntity(Optional.of("Tables not found"), HttpStatus.NOT_ACCEPTABLE);
       }else{
-        return new ResponseEntity(Optional.of(tablesList1),HttpStatus.ACCEPTED);
+        return new ResponseEntity(Optional.of(tablesList2),HttpStatus.ACCEPTED);
 
       }
     }
 
-//    @Override
-//    public ResponseEntity BookTable(TablesDto tablesDto) {
-//      Tables tables = new Tables();
-//      tables.setTableBookingDate(tablesDto.getTableBookingDate());
-//      tables.setTableBookingTime(tablesDto.getTableBookingTime());
-//      tables.setTableId(tablesDto.getTableId());
-//      tables.setTableName(tablesDto.getTableName());
-//      tables.setTableSeats(tablesDto.getTableSeats());
-//      tables.setTableStatus("booked");
-//      List<Tables> tablesList = tablesRepository.findTableBySeats(tablesDto.getTableSeats());
-//      List<Tables> tablesList1 = tablesList.stream().filter(s->s.getTableBookingDate().before(tablesDto.getTableBookingDate())||s.getTableBookingDate().after(tablesDto.getTableBookingDate())).collect(Collectors.toList());
-//        if (tablesList1.size() < 0 ){
-//          Tables tables1 = tablesRepository.save(tables);
-//          if (tables1 == null){
-//            return new ResponseEntity<>(Optional.of("table not Booked"),HttpStatus.NOT_ACCEPTABLE);
-//          }else{
-//            return new ResponseEntity(Optional.of(tables1),HttpStatus.ACCEPTED);
-//          }
-//        }else{
-//          return null;
-//        }
-//    }
+  @Override
+  public ResponseEntity getTables() {
+    List<Tables> tablesList = tablesRepository.findAll();
+    if (tablesList.size()==0){
+      return new ResponseEntity(Optional.of("No Tables Found"),HttpStatus.NOT_ACCEPTABLE);
+    }else{
+      return new ResponseEntity(Optional.of(tablesList),HttpStatus.ACCEPTED);
+    }
+  }
+
+  @Override
+  public ResponseEntity bookTables(TableBookingDto tableBookingDto) {
+      if (tableBookingDto.getNumberOfSeatsRequired()>8){
+        return new ResponseEntity(Optional.of("No table with "+tableBookingDto.getNumberOfSeatsRequired()+" seats available please try to split the seats in multiple tables"),HttpStatus.NOT_ACCEPTABLE);
+      }
+    List<Tables> tablesList = tablesRepository.findTableByNumberOfSeats();
+      List<Tables> tables = tablesList.stream().filter(s->s.getTableSeats() >= tableBookingDto.getNumberOfSeatsRequired()
+              && s.getTableStatus().equals("available")).collect(Collectors.toList());
+      if (tables.size()<=0){
+        return new ResponseEntity(Optional.of("Table Not Available"),HttpStatus.NOT_ACCEPTABLE);
+    }else{
+        return new ResponseEntity(Optional.of(bookingsRepository.save(bookings)),HttpStatus.ACCEPTED);
+      }
+  }
+
 }

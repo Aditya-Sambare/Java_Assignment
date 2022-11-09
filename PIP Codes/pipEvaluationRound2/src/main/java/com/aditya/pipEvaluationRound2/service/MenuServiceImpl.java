@@ -14,7 +14,7 @@ public class MenuServiceImpl implements MenuService{
     @Autowired
     MenuRepository menuRepository;
     @Override
-    public void addMenu() {
+    public ResponseEntity addMenu() {
         Menu menu = new Menu();
         menu.setItemName("coffee");
         menu.setItemPrice(30);
@@ -27,10 +27,32 @@ public class MenuServiceImpl implements MenuService{
         Menu menu3 = new Menu();
         menu3.setItemName("misal");
         menu3.setItemPrice(50);
+        Menu menu4 = new Menu();
+        menu4.setItemName("pav bhaji");
+        menu4.setItemPrice(80);
+        Menu menu5 = new Menu();
+        menu5.setItemName("Dosa");
+        menu5.setItemPrice(50);
+        Menu menu6 = new Menu();
+        menu6.setItemName("Biryani");
+        menu6.setItemPrice(100);
+        Menu menu7 = new Menu();
+        menu7.setItemName("Vada pav");
+        menu7.setItemPrice(20);
         menuRepository.save(menu);
         menuRepository.save(menu1);
         menuRepository.save(menu2);
         menuRepository.save(menu3);
+        menuRepository.save(menu4);
+        menuRepository.save(menu5);
+        menuRepository.save(menu6);
+        menuRepository.save(menu7);
+        List<Menu> menuList = menuRepository.findAll();
+        if (menuList.size() == 0){
+            return new ResponseEntity(Optional.of("Something went Wrong"),HttpStatus.NOT_ACCEPTABLE);
+        }else{
+            return new ResponseEntity(Optional.of(menuList),HttpStatus.ACCEPTED);
+        }
     }
 
     @Override

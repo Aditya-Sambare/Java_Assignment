@@ -13,10 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class MenuController {
     @Autowired
     MenuService menuService;
-    @GetMapping("/get")
+    @GetMapping("/getMenu")
     public ResponseEntity getMenu() {
         try {
             return menuService.showMenu();
+        }
+        catch (Exception exception) {
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @GetMapping("/addMenu")
+    public ResponseEntity addMenu() {
+        try {
+            return menuService.addMenu();
         }
         catch (Exception exception) {
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);

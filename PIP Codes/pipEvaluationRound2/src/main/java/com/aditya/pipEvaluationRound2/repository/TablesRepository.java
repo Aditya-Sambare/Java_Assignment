@@ -9,7 +9,8 @@ import java.util.List;
 
 @Repository
 public interface TablesRepository extends JpaRepository<Tables,Integer> {
-    @Query("select t from Tables t where t.tableSeats = ?1")
-    List<Tables> findTableBySeats(int tableSeats);
+    @Query("select t from Tables t order by t.tableSeats")
+    List<Tables> findTableByNumberOfSeats();
+
 
 }

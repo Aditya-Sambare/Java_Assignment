@@ -1,5 +1,6 @@
 package com.aditya.pipEvaluationRound2.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,12 +11,14 @@ public class Bookings {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingID;
-    private String customerName;
-    private long customerMobileNumber;
     @ManyToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     private Tables tables;
     @OneToOne(cascade = CascadeType.ALL)
     private Orders orders;
     @OneToOne(cascade = CascadeType.ALL)
     private  Bill bill;
+    @ManyToOne
+    @JsonIgnore
+    User user;
 }

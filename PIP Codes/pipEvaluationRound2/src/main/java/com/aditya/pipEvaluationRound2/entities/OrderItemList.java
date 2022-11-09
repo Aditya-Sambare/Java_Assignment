@@ -1,5 +1,6 @@
 package com.aditya.pipEvaluationRound2.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,9 +11,11 @@ public class OrderItemList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderItemListId;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     private Menu menu;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     private Orders orders;
     private int quantity;
 }
