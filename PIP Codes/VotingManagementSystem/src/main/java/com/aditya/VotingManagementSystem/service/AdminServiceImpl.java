@@ -1,0 +1,30 @@
+package com.aditya.VotingManagementSystem.service;
+
+import com.aditya.VotingManagementSystem.dto.requestDto.AdminRegistrationDto;
+import com.aditya.VotingManagementSystem.entities.Admin;
+import com.aditya.VotingManagementSystem.entities.Registration;
+import com.aditya.VotingManagementSystem.repository.AdminRepository;
+import com.aditya.VotingManagementSystem.repository.RegistrationRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AdminServiceImpl implements AdminService{
+@Autowired
+    AdminRepository adminRepository;
+@Autowired
+RegistrationRepository registrationRepository;
+    @Override
+    public Admin registerAdmin(AdminRegistrationDto adminRegistrationDto) {
+        Admin admin = new Admin();
+        admin.setAdminName(adminRegistrationDto.getAdminName());
+        admin.setAdminPassword(adminRegistrationDto.getAdminPassword());
+        Admin admin1 = adminRepository.save(admin);
+        Registration registration = new Registration();
+        registration.setUserID(admin.getAdminId());
+        registration.setUserPassword(admin.getAdminPassword());
+        registration.setUserRole("Admin");
+        registrationRepository.save(registration);
+        return admin1;
+    }
+}

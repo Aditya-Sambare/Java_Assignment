@@ -11,6 +11,9 @@ public class Bookings {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingID;
+    String customerName;
+    long customerMobileNumber;
+    String billGenratedAndPaidStatus;
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     private Tables tables;
@@ -18,7 +21,4 @@ public class Bookings {
     private Orders orders;
     @OneToOne(cascade = CascadeType.ALL)
     private  Bill bill;
-    @ManyToOne
-    @JsonIgnore
-    User user;
 }

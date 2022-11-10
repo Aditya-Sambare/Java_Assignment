@@ -3,10 +3,8 @@ package com.aditya.pipEvaluationRound2.service;
 import com.aditya.pipEvaluationRound2.dto.requestDto.TableBookingDto;
 import com.aditya.pipEvaluationRound2.entities.Bookings;
 import com.aditya.pipEvaluationRound2.entities.Tables;
-import com.aditya.pipEvaluationRound2.entities.User;
 import com.aditya.pipEvaluationRound2.repository.BookingsRepository;
 import com.aditya.pipEvaluationRound2.repository.TablesRepository;
-import com.aditya.pipEvaluationRound2.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +22,6 @@ public class TablesServiceImpl implements TablesService{
   @Autowired
   BookingsRepository bookingsRepository;
 
-  @Autowired
-  UserRepository userRepository;
     @Override
     public ResponseEntity addTables() {
         Tables tables1 = new Tables();
@@ -139,7 +135,17 @@ public class TablesServiceImpl implements TablesService{
       if (tables.size()<=0){
         return new ResponseEntity(Optional.of("Table Not Available"),HttpStatus.NOT_ACCEPTABLE);
     }else{
-        return new ResponseEntity(Optional.of(bookingsRepository.save(bookings)),HttpStatus.ACCEPTED);
+        Bookings bookings = new Bookings();
+        tables.get(0).setTableStatus("booked");
+        bookings.setTables(tables.get(0));
+        bookings.setCustomerName(tableBookingDto.getCustomerName());
+        bookings.setCustomerMobileNumber(tableBookingDto.getCustomerMobileNumber());
+        Bookings bookings1 = bookingsRepository.save(bookings);
+        if (bookings1 == null){
+          return new ResponseEntity(Optional.of("something went wrong"),HttpStatus.NOT_ACCEPTABLE);
+        }else{
+          return new ResponseEntity(Optional.of(bookings1),HttpStatus.ACCEPTED);
+        }
       }
   }
 
