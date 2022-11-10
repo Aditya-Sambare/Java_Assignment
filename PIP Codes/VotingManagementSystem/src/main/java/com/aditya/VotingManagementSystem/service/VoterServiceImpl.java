@@ -24,7 +24,7 @@ public class VoterServiceImpl implements VoterService{
         Voter voter = new Voter();
         Random random = new Random();
         List<Voter> voterList = voterRepository.findAll();
-        List<Voter> voterList1 = voterList.stream().filter(s->s.getVoterMobileNumber()==voterRegistrationDto.getVoterMobileNumber()).collect(Collectors.toList());
+        List<Voter> voterList1 = voterList.stream().filter(s->s.getVoterMobileNumber()==voterRegistrationDto.getVoterMobileNumber() || voterRegistrationDto.getVoterAge() < 18).collect(Collectors.toList());
         if (voterList1.size()>0){
             return null;
         }
