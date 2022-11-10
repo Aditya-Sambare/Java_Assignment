@@ -27,7 +27,6 @@ public class AdminController {
                 return new ResponseEntity(Optional.of("Something Went Wrong"), HttpStatus.NOT_ACCEPTABLE);
             }
         } catch (Exception exception) {
-            System.out.println(exception.getMessage());
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -41,7 +40,6 @@ public class AdminController {
                 return new ResponseEntity(Optional.of("No records Available"), HttpStatus.NOT_ACCEPTABLE);
             }
         } catch (Exception exception) {
-            System.out.println(exception.getMessage());
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

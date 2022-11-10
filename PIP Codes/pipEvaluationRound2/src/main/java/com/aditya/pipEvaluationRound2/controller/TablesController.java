@@ -34,11 +34,11 @@ public class TablesController {
     }
     @PostMapping("/bookTable")
     public ResponseEntity bookTables(@RequestBody TableBookingDto tableBookingDto) {
-//        try {
+        try {
             return new ResponseEntity(Optional.of(tablesService.bookTables(tableBookingDto)),HttpStatus.ACCEPTED);
-//        } catch (Exception exception) {
-//            System.out.println(exception.getMessage());
-//            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

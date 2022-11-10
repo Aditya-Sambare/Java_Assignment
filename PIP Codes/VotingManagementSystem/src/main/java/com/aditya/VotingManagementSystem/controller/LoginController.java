@@ -30,7 +30,6 @@ public class LoginController {
                 return new ResponseEntity(Optional.of("Invalid Crediantials"), HttpStatus.NOT_ACCEPTABLE);
             }
         } catch (Exception exception) {
-            System.out.println(exception.getMessage());
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

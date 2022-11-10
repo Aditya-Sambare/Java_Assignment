@@ -25,6 +25,7 @@ public class VoterController {
     public ResponseEntity registerVoter(@RequestBody VoterRegistrationDto voterRegistrationDto) {
         try {
             Voter voter =voterService.registerVoter(voterRegistrationDto);
+            System.out.println(voter);
             if(voter != null) {
                 return new ResponseEntity(Optional.of(voter), HttpStatus.ACCEPTED);
             }else{

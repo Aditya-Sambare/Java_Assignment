@@ -10,6 +10,7 @@ import com.aditya.VotingManagementSystem.repository.VotingRecordsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -24,12 +25,18 @@ VoterRepository voterRepository;
 PartyRepository partyRepository;
     @Override
     public VotingRecords recordVote(VotingRecordDto votingRecordDto) {
-        List<VotingRecords> votingRecordsList = votingRecordsRepository.findAll();
-        List<VotingRecords> votingRecordsList1 = votingRecordsList.stream().filter(s->s.getVoter().getVoterId()==votingRecordDto.getVoterId()).collect(Collectors.toList());
+        List<VotingRecords> votingRecordsList = new ArrayList<>();
+        List<VotingRecords> votingRecordsList1 = new ArrayList<>();
+        votingRecordsList = votingRecordsRepository.findAll();
+        if (votingRecordsList.size()>0) {
+            votingRecordsList1 = votingRecordsList.stream().filter(s -> s.getVoter().getVoterId() == votingRecordDto.getVoterId()).collect(Collectors.toList());
+        }
         if(votingRecordsList1.size()>0){
             return null;
         }
+
         VotingRecords votingRecords = new VotingRecords();
+        System.out.println(votingRecordDto.getPartyId());
         Party party1 = partyRepository.findById(votingRecordDto.getPartyId()).get();
         Voter voter1 = voterRepository.findById(votingRecordDto.getVoterId()).get();
         votingRecords.setParty(party1);

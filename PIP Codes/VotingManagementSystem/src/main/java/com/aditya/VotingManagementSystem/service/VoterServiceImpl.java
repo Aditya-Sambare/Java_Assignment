@@ -29,7 +29,7 @@ public class VoterServiceImpl implements VoterService{
             return null;
         }
 int voterID;
-String s = null;
+String s = "";
         for(int i = 0; i<8; i++){
             s = s+Integer.toString(random.nextInt(10));
         }
