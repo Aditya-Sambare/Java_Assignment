@@ -1,5 +1,6 @@
 package com.aditya.VotingManagementSystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -16,5 +17,6 @@ public class Voter {
     long voterMobileNumber;
     int voterAge;
     @OneToOne
+    @JsonIgnore
     VotingRecords votingRecords;
 }

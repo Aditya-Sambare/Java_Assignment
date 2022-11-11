@@ -1,5 +1,6 @@
 package com.aditya.VotingManagementSystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -9,7 +10,7 @@ import java.util.List;
 @Data
 public class Party {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     int partyId;
     @Column(unique = true)
     String partyName;
@@ -17,5 +18,6 @@ public class Party {
     String partySymbol;
     String partySlogan;
     @OneToMany(mappedBy = "party")
+    @JsonIgnore
     List<VotingRecords> votingRecordsList;
 }

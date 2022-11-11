@@ -1,21 +1,21 @@
-package com.aditya.VotingManagementSystem.entities;
+package com.aditya.CarStoreSystem.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
 @Entity
 @Data
-public class VotingRecords {
+public class CarsAtStore {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int votingRecordsId;
+    int carId;
+    String carModelName;
+    float carPrice;
+    String carCategory;
+    int carAvailablity;
     @OneToOne(cascade = CascadeType.ALL)
     @JsonIgnore
-    Voter voter;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JsonIgnore
-    Party party;
+    Orders orders;
 }
