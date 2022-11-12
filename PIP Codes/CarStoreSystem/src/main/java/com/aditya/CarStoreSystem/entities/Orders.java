@@ -12,7 +12,7 @@ public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int orderId;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     CarsAtStore carsAtStore;
     @ManyToOne(cascade = CascadeType.ALL)

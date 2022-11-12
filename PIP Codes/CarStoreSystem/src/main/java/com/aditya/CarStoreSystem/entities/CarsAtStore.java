@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -15,7 +16,7 @@ public class CarsAtStore {
     float carPrice;
     String carCategory;
     int carAvailablity;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "carsAtStore")
     @JsonIgnore
-    Orders orders;
+    List<Orders> orders;
 }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -26,22 +27,27 @@ public class OrdersServiceImpl implements OrdersService {
     public Orders addOrders(AddOrdersDto addOrdersDto) {
         Orders orders = new Orders();
         CarsAtStore carsAtStore = carsAtStoreRepository.findById(addOrdersDto.getCarID()).get();
-        Customers customers = customersRepository.findById(addOrdersDto.getCarID()).get();
+        Customers customers = customersRepository.findById(addOrdersDto.getCustomerId()).get();
         orders.setOrderDate(addOrdersDto.getOrderDate());
         orders.setOrderStatus("booked");
         carsAtStore.setCarAvailablity(carsAtStore.getCarAvailablity()-1);
         if (carsAtStore.getCarAvailablity()>0) {
             orders.setOrderDeliveryDate(addOrdersDto.getOrderDate().toString());
         }else{
+            carsAtStore.setCarAvailablity(0);
             Calendar c = Calendar.getInstance();
             c.setTime(addOrdersDto.getOrderDate()); // Using today's date
             c.add(Calendar.DATE, 15); // Adding 5 days
-            orders.setOrderDeliveryDate(c.toString());
+            orders.setOrderDeliveryDate(c.getTime().toString());
         }
         orders.setOrderDownPayment(carsAtStore.getCarPrice()/3);
         orders.setOrderPrice(carsAtStore.getCarPrice());
         orders.setCustomers(customers);
         orders.setCarsAtStore(carsAtStore);
+        List<Orders> ordersList = carsAtStore.getOrders();
+        ordersList.add(orders);
+        carsAtStore.setOrders(ordersList);
+//        carsAtStoreRepository.save(carsAtStore);
         Random random = new Random();
 
         String s = "";
