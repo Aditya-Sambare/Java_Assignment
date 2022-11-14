@@ -4,6 +4,7 @@ import com.aditya.CarStoreSystem.dto.requestDto.AddOrdersDto;
 import com.aditya.CarStoreSystem.entities.CarsAtStore;
 import com.aditya.CarStoreSystem.entities.Customers;
 import com.aditya.CarStoreSystem.entities.Orders;
+import com.aditya.CarStoreSystem.exception.CarNotFoundException;
 import com.aditya.CarStoreSystem.repository.CarsAtStoreRepository;
 import com.aditya.CarStoreSystem.repository.CustomersRepository;
 import com.aditya.CarStoreSystem.repository.OrdersRepository;
@@ -34,11 +35,13 @@ public class OrdersServiceImpl implements OrdersService {
         if (carsAtStore.getCarAvailablity()>0) {
             orders.setOrderDeliveryDate(addOrdersDto.getOrderDate().toString());
         }else{
-            carsAtStore.setCarAvailablity(0);
-            Calendar c = Calendar.getInstance();
-            c.setTime(addOrdersDto.getOrderDate()); // Using today's date
-            c.add(Calendar.DATE, 15); // Adding 5 days
-            orders.setOrderDeliveryDate(c.getTime().toString());
+            throw new CarNotFoundException();
+//
+//            carsAtStore.setCarAvailablity(0);
+//            Calendar c = Calendar.getInstance();
+//            c.setTime(addOrdersDto.getOrderDate()); // Using today's date
+//            c.add(Calendar.DATE, 15); // Adding 5 days
+//            orders.setOrderDeliveryDate(c.getTime().toString());
         }
         orders.setOrderDownPayment(carsAtStore.getCarPrice()/3);
         orders.setOrderPrice(carsAtStore.getCarPrice());

@@ -20,11 +20,16 @@ public class OrdersController {
     OrdersService ordersService;
     @PostMapping("/addOrder")
     public ResponseEntity addOrders(@RequestBody AddOrdersDto addOrdersDto){
-        Orders orders = ordersService.addOrders(addOrdersDto);
-        if (orders != null){
-            return new ResponseEntity(Optional.of(orders), HttpStatus.ACCEPTED);
-        }else{
-            return new ResponseEntity(Optional.of("Something Went Wrong"),HttpStatus.NOT_ACCEPTABLE);
+        try {
+            Orders orders = ordersService.addOrders(addOrdersDto);
+            if (orders != null) {
+                return new ResponseEntity(Optional.of(orders), HttpStatus.ACCEPTED);
+            } else {
+                return new ResponseEntity(Optional.of("Something Went Wrong"), HttpStatus.NOT_ACCEPTABLE);
+            }
+        }
+        catch (Exception exception) {
+            return new ResponseEntity(exception.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
 }
