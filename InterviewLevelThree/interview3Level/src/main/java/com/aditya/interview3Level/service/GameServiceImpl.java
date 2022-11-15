@@ -128,6 +128,7 @@ public class GameServiceImpl implements GameService{
             result = "game over player 1 wins";
             gameRepository.save(game);
         }
+        gameRepository.save(game);
         return result;
     }
 }

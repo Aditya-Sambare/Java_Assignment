@@ -10,7 +10,6 @@ public class ScoresBoards {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int scoresBoardsId;
-    int ranks;
     long rewardsPoints;
     @OneToOne(cascade = CascadeType.ALL)
     Player player;
